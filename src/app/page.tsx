@@ -3,6 +3,7 @@ import ProblemSolution from './(sections)/ProblemSolution';
 import HowItWorks from './(sections)/HowItWorks';
 import Features from './(sections)/Features';
 import Benefits from './(sections)/Benefits';
+import WhyNow from './(sections)/WhyNow';
 import UseCasesAbout from './(sections)/UseCasesAbout';
 import WaitlistFooter from './(sections)/WaitlistFooter';
 
@@ -14,6 +15,7 @@ export default function Home() {
       <HowItWorks />
       <Features />
       <Benefits />
+      <WhyNow />
       <UseCasesAbout />
       <WaitlistFooter />
     </main>
