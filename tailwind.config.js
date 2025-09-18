@@ -12,7 +12,7 @@ export default {
   },
   plugins: [daisyui],
   daisyui: {
-    themes: ['emerald'],
+    themes: ['forest'],
     base: true,
     styled: true,
     utils: true,
