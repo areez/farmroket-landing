@@ -10,14 +10,17 @@ import WaitlistFooter from './(sections)/WaitlistFooter';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Hero />
-      <ProblemSolution />
-      <HowItWorks />
-      <Features />
-      <Benefits />
-      <WhyNow />
-      <UseCasesAbout />
-      <WaitlistFooter />
+      <div className="relative">
+        {/* Unified page background is now handled by body in globals.css */}
+        <Hero />
+        <ProblemSolution />
+        <HowItWorks />
+        <Features />
+        <Benefits />
+        <WhyNow />
+        <UseCasesAbout />
+        <WaitlistFooter />
+      </div>
     </main>
   );
 }

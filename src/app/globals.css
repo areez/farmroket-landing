@@ -2,10 +2,227 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Unified Color Palette */
+  --primary-green: #10B981;
+  --primary-green-hover: #059669;
+  --primary-green-light: #34D399;
+  
+  /* Color System */
+  --color-primary: #f9fafb;
+  --color-secondary: #6b7280;
+  --color-accent: #10b981;
+  --color-accent-bright: #34d399;
+  --color-surface: #1f2937;
+  --color-background: #111827;
+  --color-body: #d1d5db;
+  
+  /* Dark Theme Colors */
+  --bg-primary: #0F172A;
+  --bg-secondary: #1E293B;
+  --bg-tertiary: #334155;
+  --bg-card: #1E293B;
+  --bg-card-hover: #334155;
+  
+  /* Text Colors */
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  
+  /* Border Colors */
+  --border-primary: #334155;
+  --border-secondary: #475569;
+  
+  /* Typography Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  
+  /* Spacing Scale */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, #0F172A 25%, #1E293B 75%, var(--bg-secondary) 100%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Design System Components */
+@layer components {
+  /* Uniform Button Styles */
+  .btn-primary {
+    @apply bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-emerald-500/25 text-base h-12;
+    letter-spacing: 0.025em;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-base h-12 flex items-center justify-center;
+    letter-spacing: 0.025em;
+  }
+
+  .btn-accent {
+    @apply bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl text-base h-12;
+    letter-spacing: 0.025em;
+  }
+
+  .btn-primary-large {
+    @apply bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 border-0;
+    height: 56px;
+    letter-spacing: 0.025em;
+  }
+
+  .btn-secondary-large {
+    @apply bg-transparent hover:bg-emerald-600/10 text-emerald-400 border-2 border-emerald-400 hover:border-emerald-300 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center;
+    height: 56px;
+    letter-spacing: 0.025em;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply hover:bg-gray-800/70 hover:border-gray-600/50 hover:shadow-lg hover:shadow-emerald-500/10 hover:-translate-y-1;
+  }
+  
+  .card-primary {
+    @apply bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 transition-all duration-300 hover:bg-gray-800/70 hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-500/10;
+  }
+  
+  .card-accent {
+    @apply bg-gradient-to-br from-emerald-500/10 to-emerald-400/10 border-emerald-500/20;
+  }
+  
+  /* Typography Hierarchy with Inter */
+  .heading-xl {
+    @apply text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-8;
+    font-family: var(--font-inter), sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .heading-lg {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6;
+    font-family: var(--font-inter), sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  .heading-md {
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold text-white leading-tight mb-4;
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  .heading-sm {
+    @apply text-xl md:text-2xl lg:text-3xl font-medium text-white leading-tight mb-3;
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  .text-body {
+    @apply text-lg text-gray-300 leading-relaxed mb-4;
+  }
+
+  .text-body-sm {
+    @apply text-base text-gray-400 leading-relaxed mb-3;
+  }
+
+  .text-body-lg {
+    @apply text-xl text-gray-300 leading-relaxed;
+  }
+  
+  .text-accent {
+    @apply text-emerald-400 font-semibold;
+  }
+  
+  .text-accent-bright {
+    color: var(--color-accent-bright);
+  }
+  
+  /* Container and Layout Utilities */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-padding {
+    @apply px-6 md:px-8;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .content-container {
+    @apply max-w-6xl mx-auto;
+  }
+  
+  /* Futuristic Icon Styles */
+  .icon-gradient {
+    stroke: url(#iconGradient);
+    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.3));
+  }
+
+  .icon-slim {
+    @apply w-8 h-8;
+    stroke-width: 1;
+  }
+
+  .icon-slim-lg {
+    @apply w-12 h-12;
+    stroke-width: 1;
+  }
+  
+  /* Futuristic Timeline Styles */
+  .timeline-container {
+    @apply relative flex items-start justify-between max-w-6xl mx-auto py-16;
+  }
+
+  .timeline-line {
+    @apply absolute top-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent transform z-0;
+  }
+
+  .timeline-step {
+    @apply relative z-10 flex flex-col items-center text-center max-w-sm px-4;
+  }
+
+  .timeline-number {
+    @apply w-16 h-16 bg-gradient-to-br from-emerald-400/20 to-emerald-600/20 border-2 border-emerald-400/40 rounded-2xl flex items-center justify-center text-emerald-400 font-bold text-xl mb-6 shadow-lg shadow-emerald-500/10 backdrop-blur-sm;
+  }
+
+  .timeline-pulse {
+    @apply absolute inset-0 rounded-2xl bg-emerald-400/10 animate-pulse;
+  }
+  
+  /* Form Styles */
+  .form-input {
+    @apply w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all duration-200;
+  }
+  
+  .form-input-large {
+    @apply w-full px-6 py-5 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all duration-200 text-lg;
+  }
 }

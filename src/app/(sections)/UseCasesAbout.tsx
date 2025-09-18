@@ -42,28 +42,28 @@ export default function UseCasesAbout() {
   ];
 
   return (
-    <>
-      {/* Use Cases & Regulatory Section */}
-      <section className="py-20 bg-base-100">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+    <section className="section-padding">
+      <div className="section-container">
+        <div className="content-container">
+          {/* Use Cases Section */}
+          <div className="mb-20">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Use Cases */}
               <div>
-                <h2 className="text-4xl font-bold text-base-content mb-6">
+                <h2 className="heading-lg mb-6">
                   Regulatory Compliance Made Simple
                 </h2>
-                <p className="text-xl text-base-content/80 mb-8 leading-relaxed">
+                <p className="text-xl text-body mb-8 leading-relaxed">
                   Stay ahead of evolving food safety regulations with automated compliance tracking and real-time reporting. Our platform ensures you&apos;re always audit-ready.
                 </p>
                 
                 <div className="space-y-6">
                   {useCases.map((useCase, index) => (
-                    <div key={index} className="border-l-4 border-emerald-500 pl-6">
-                      <h3 className="text-xl font-semibold text-base-content mb-2">
+                    <div key={index} className="border-l-4 border-accent pl-6">
+                      <h3 className="text-xl font-semibold text-primary mb-2">
                         {useCase.title}
                       </h3>
-                      <p className="text-base-content/80 mb-3">
+                      <p className="text-body mb-3">
                         {useCase.description}
                       </p>
                       <a 
@@ -81,41 +81,39 @@ export default function UseCasesAbout() {
               </div>
 
               {/* Regulatory Push */}
-              <div className="bg-base-200 rounded-2xl p-8">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-base-content mb-4">
+              <div className="card p-8">
+                <div className="text-center mb-8">
+                  <svg className="w-12 h-12 text-accent mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                  <h3 className="heading-md mb-4">
                     Regulatory Landscape
                   </h3>
                 </div>
                 
-                <div className="space-y-4 text-base-content/90">
+                <div className="space-y-8 text-body px-2">
                   <div className="flex items-start">
-                    <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>FDA Food Traceability Rule requires enhanced record-keeping for high-risk foods</span>
+                    <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-4 flex-shrink-0"></span>
+                    <span className="leading-relaxed">FDA Food Traceability Rule requires enhanced record-keeping for high-risk foods</span>
                   </div>
                   <div className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>EU regulations mandate farm-to-fork traceability by 2025</span>
+                    <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-4 flex-shrink-0"></span>
+                    <span className="leading-relaxed">EU regulations mandate farm-to-fork traceability by 2025</span>
                   </div>
                   <div className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Consumer demand for transparency driving market changes</span>
+                    <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-4 flex-shrink-0"></span>
+                    <span className="leading-relaxed">Consumer demand for transparency driving market changes</span>
                   </div>
                   <div className="flex items-start">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>Blockchain adoption accelerating across food industry</span>
+                    <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-4 flex-shrink-0"></span>
+                    <span className="leading-relaxed">Blockchain adoption accelerating across food industry</span>
                   </div>
                 </div>
                 
-                <div className="mt-6 text-center">
+                <div className="mt-8 text-center">
                   <a 
                     href="#regulatory-whitepaper" 
-                    className="btn btn-primary text-white px-6"
+                    className="btn-primary"
                   >
                     Download Regulatory Guide
                   </a>
@@ -124,57 +122,55 @@ export default function UseCasesAbout() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* About Section */}
-      <section className="py-20 bg-base-200">
-        <div className="container mx-auto px-4">
+        {/* About Section */}
+        <div>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-base-content mb-4">
+            <h2 className="heading-lg mb-4">
               Meet Our Founders
             </h2>
-            <p className="text-xl text-base-content/80 max-w-3xl mx-auto">
+            <p className="text-xl text-body max-w-3xl mx-auto">
               Passionate about transforming the food industry through technology and transparency
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {founders.map((founder, index) => (
-              <div key={index} className="card bg-base-100 shadow-xl">
+              <div key={index} className="card">
                 <div className="card-body text-center">
                   <div className="avatar mb-6">
-                    <div className="w-32 h-32 rounded-full mx-auto bg-base-300 flex items-center justify-center">
-                      <svg className="w-16 h-16 text-base-content/40" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="w-32 h-32 rounded-full mx-auto bg-surface flex items-center justify-center">
+                      <svg className="w-16 h-16 text-body" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                       </svg>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-base-content mb-1">
+                  <h3 className="heading-md mb-1">
                     {founder.name}
                   </h3>
                   <p className="text-accent font-semibold mb-4">
                     {founder.title}
                   </p>
-                  <p className="text-base-content/80 leading-relaxed mb-6">
+                  <p className="text-body leading-relaxed mb-6">
                     {founder.bio}
                   </p>
                   <div className="flex justify-center space-x-4">
                     <a 
                       href={founder.linkedin} 
-                      className="btn btn-circle btn-outline btn-sm"
+                      className="w-8 h-8 flex items-center justify-center rounded-full border border-neutral-content/30 text-body hover:bg-accent hover:border-accent hover:text-white transition-all duration-300"
                       aria-label={`${founder.name} LinkedIn`}
                     >
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                       </svg>
                     </a>
                     <a 
                       href={founder.twitter} 
-                      className="btn btn-circle btn-outline btn-sm"
+                      className="w-8 h-8 flex items-center justify-center rounded-full border border-neutral-content/30 text-body hover:bg-accent hover:border-accent hover:text-white transition-all duration-300"
                       aria-label={`${founder.name} Twitter`}
                     >
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                       </svg>
                     </a>
                   </div>
@@ -183,12 +179,12 @@ export default function UseCasesAbout() {
             ))}
           </div>
 
-          <div className="text-center mt-16">
-            <div className="bg-base-100 rounded-2xl shadow-xl p-8 max-w-3xl mx-auto">
-              <h3 className="text-2xl font-bold text-base-content mb-4">
+          <div className="text-center mt-24">
+            <div className="max-w-3xl mx-auto text-center">
+              <h3 className="heading-md mb-6">
                 Our Mission
               </h3>
-              <p className="text-base-content/80 text-lg leading-relaxed">
+              <p className="text-body text-lg leading-relaxed">
                 To create a world where every consumer can trust the food they eat by providing complete transparency 
                 and traceability throughout the supply chain. We believe that technology should serve humanity, 
                 and blockchain can be the foundation for a more sustainable and trustworthy food system.
@@ -196,7 +192,7 @@ export default function UseCasesAbout() {
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
