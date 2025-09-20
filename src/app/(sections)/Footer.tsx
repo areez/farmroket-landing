@@ -1,26 +1,26 @@
 export default function Footer() {
   return (
-    <footer className="footer bg-base-200 text-base-content section-padding">
+    <footer className="footer bg-base-200 text-base-content section-padding pt-12 sm:pt-16 lg:pt-20 px-4 sm:px-6 lg:px-8">
       <div className="w-full flex justify-center">
         <div className="max-w-7xl w-full px-4 sm:px-6 lg:px-8">
           {/* Main Footer Content */}
-          <div className="footer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 justify-items-center text-center">
+          <div className="footer grid grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 gap-8 md:gap-6 lg:gap-8 justify-items-start sm:justify-items-center md:justify-items-start text-left sm:text-center md:text-left">
             {/* Company Info */}
-            <div className="md:col-span-2 lg:col-span-1">
-              <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="sm:col-span-1 md:col-span-2 lg:col-span-2">
+              <div className="flex items-center justify-start sm:justify-center lg:justify-start gap-3 mb-6">
                 <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-primary-content" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <span className="text-2xl font-bold">FarmRoket™</span>
+                <span className="text-xl sm:text-2xl font-bold">FarmRoket™</span>
               </div>
-              <div className="flex justify-center">
-                <p className="text-base text-base-content/70 max-w-sm mb-6 leading-relaxed text-left">
+              <div className="flex justify-start sm:justify-center md:justify-start">
+                <p className="text-sm sm:text-base text-base-content/70 max-w-sm mb-6 leading-relaxed">
                   Blockchain-powered food traceability platform helping suppliers meet compliance requirements and build consumer trust.
                 </p>
               </div>
-              <div className="flex gap-4 justify-center">
+              <div className="flex gap-4 justify-start sm:justify-center md:justify-start">
                 <a href="#" className="social-icon">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
@@ -40,8 +40,8 @@ export default function Footer() {
             </div>
 
             {/* Product & Solutions */}
-            <nav>
-              <h6 className="footer-title">Platform</h6>
+            <nav className="md:col-span-1 lg:col-span-1">
+              <h6 className="text-sm font-semibold uppercase tracking-wider mb-3" style={{color: '#a5ce39'}}>Platform</h6>
               <a className="link link-hover">Features</a>
               <a className="link link-hover">Dashboard</a>
               <a className="link link-hover">QR Codes</a>
@@ -52,8 +52,8 @@ export default function Footer() {
             </nav>
 
             {/* Resources & Support */}
-            <nav>
-              <h6 className="footer-title">Resources</h6>
+            <nav className="md:col-span-1 lg:col-span-1">
+              <h6 className="text-sm font-semibold uppercase tracking-wider mb-3" style={{color: '#a5ce39'}}>Resources</h6>
               <a className="link link-hover">Documentation</a>
               <a className="link link-hover">FSMA 204 Guide</a>
               <a className="link link-hover">EUDR Compliance</a>
@@ -64,8 +64,8 @@ export default function Footer() {
             </nav>
 
             {/* Company */}
-            <nav>
-              <h6 className="footer-title">Company</h6>
+            <nav className="md:col-span-1 lg:col-span-1">
+              <h6 className="text-sm font-semibold uppercase tracking-wider mb-3" style={{color: '#a5ce39'}}>Company</h6>
               <a className="link link-hover">About Us</a>
               <a className="link link-hover">Careers</a>
               <a className="link link-hover">Contact</a>
@@ -77,78 +77,76 @@ export default function Footer() {
           </div>
 
           {/* Compliance Badges */}
-          <div className="divider my-12"></div>
-          <div className="flex flex-wrap justify-center gap-6 mb-12">
-            <div className="badge badge-outline badge-lg gap-2 p-4">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="divider my-6 sm:my-8"></div>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8">
+            <div className="badge badge-outline gap-1 p-2">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
-              SOC 2 Compliant
+              <span className="text-xs">SOC 2 Compliant</span>
             </div>
-            <div className="badge badge-outline badge-lg gap-2 p-4">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="badge badge-outline gap-1 p-2">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              Blockchain Secured
+              <span className="text-xs">Blockchain Secured</span>
             </div>
-            <div className="badge badge-outline badge-lg gap-2 p-4">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="badge badge-outline gap-1 p-2">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              FSMA 204 Ready
+              <span className="text-xs">FSMA 204 Ready</span>
             </div>
-            <div className="badge badge-outline badge-lg gap-2 p-4">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="badge badge-outline gap-1 p-2">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              EUDR Compliant
+              <span className="text-xs">EU178 Compliant</span>
             </div>
           </div>
 
           {/* Newsletter Signup */}
-          <div className="w-full max-w-md mx-auto">
-            <h6 className="text-lg font-semibold mb-6 text-center">Stay Updated</h6>
-            <div className="join w-full">
+          <div className="w-full max-w-md mx-auto mt-8 sm:mt-12">
+            <h6 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-center">Stay Updated</h6>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 sm:join w-full">
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="input input-bordered input-lg join-item flex-1 focus:input-primary" 
+                className="input input-bordered !h-12 !min-h-12 w-full sm:input-lg sm:join-item sm:flex-1 focus:input-primary" 
               />
-              <button className="btn btn-primary btn-lg join-item">
+              <button className="btn btn-primary !h-12 !min-h-12 sm:btn-lg sm:join-item w-full sm:w-auto">
                 Subscribe
               </button>
             </div>
-            <p className="text-sm text-base-content/60 mt-4 text-center leading-relaxed">
-              Get the latest updates on food traceability regulations and platform features.
+            <p className="text-xs sm:text-sm text-base-content/60 mt-3 sm:mt-4 text-center leading-relaxed">
+              Get the latest updates on traceability and platform features.
             </p>
           </div>
 
           {/* Bottom Section */}
-          <div className="divider my-12"></div>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex flex-wrap gap-6 text-base">
+          <div className="divider my-6 sm:my-8"></div>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6 mb-6 sm:mb-0">
+            <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-6 text-xs">
               <a href="#" className="link link-hover transition-colors">Terms of Service</a>
               <a href="#" className="link link-hover transition-colors">Privacy Policy</a>
               <a href="#" className="link link-hover transition-colors">Cookie Policy</a>
-              <a href="#" className="link link-hover transition-colors">Accessibility</a>
             </div>
-            <p className="text-base text-base-content/60">
-              © 2024 FarmRocket. All rights reserved.
+            <p className="text-xs text-base-content/60 text-center sm:text-right">
+              © {new Date().getFullYear()} FarmRoket™. All rights reserved.
             </p>
           </div>
 
           {/* Contact Info */}
-          <div className="text-center mt-12 pt-8 border-t border-base-300">
-            <p className="text-base text-base-content/60 leading-relaxed">
-              Questions? Contact us at{' '}
-              <a href="mailto:hello@farmrocket.com" className="link link-primary font-medium hover:underline transition-all">
-                hello@farmrocket.com
-              </a>
-              {' '}or{' '}
-              <a href="mailto:support@farmrocket.com" className="link link-primary font-medium hover:underline transition-all">
-                support@farmrocket.com
-              </a>
-            </p>
+          <div className="text-center mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-base-300 pb-12 sm:pb-16 lg:pb-0">
+            <div className="text-xs text-base-content/60 leading-relaxed px-4">
+              <p>Questions?</p>
+              <p>
+                Write to us{' '}
+                <a href="mailto:contact@farmrocket.com" className="link link-primary font-medium hover:underline transition-all break-all">
+                  contact@farmrocket.com
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>

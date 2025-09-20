@@ -239,7 +239,7 @@ export default function WaitlistFooter() {
             Revolutionizing food export compliance through blockchain technology.
           </p>
           <p className="text-sm text-base-content/60 mt-2">
-            © 2024 FarmRoket™. All rights reserved.
+            © {new Date().getFullYear()} FarmRoket™. All rights reserved.
           </p>
         </div>
         
