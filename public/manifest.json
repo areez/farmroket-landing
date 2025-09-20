@@ -9,7 +9,7 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/logo-farmroket.svg",
+      "src": "/icon-farmrocket.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: '/icon-farmrocket.svg',
+    shortcut: '/icon-farmrocket.svg',
+    apple: '/icon-farmrocket.svg',
+  },
 
   openGraph: {
     type: "website",
@@ -75,10 +80,10 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'FarmRoket',
     url: 'https://farmroket.com',
-    logo: 'https://farmroket.com/logo-farmroket.svg',
+    logo: 'https://farmroket.com/icon-farmrocket.svg',
     description: 'Compliance-ready supply chain SaaS platform powered by blockchain technology.',
     foundingDate: '2024',
-    industry: 'Supply Chain Technology',
+    industry: 'Blockchain Supply Chain Technology',
     sameAs: [
       'https://twitter.com/farmroket'
     ],
