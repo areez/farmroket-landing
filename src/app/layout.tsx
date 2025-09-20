@@ -15,11 +15,19 @@ export const metadata: Metadata = {
   authors: [{ name: "FarmRoket Team" }],
   creator: "FarmRoket",
   publisher: "FarmRoket",
+  metadataBase: new URL('https://farmroket.com'),
+  alternates: {
+    canonical: '/',
+  },
+  other: {
+    'theme-color': '#000000',
+  },
   viewport: {
     width: "device-width",
     initialScale: 1.0,
     maximumScale: 1.0,
     userScalable: false,
+    themeColor: '#000000',
   },
   openGraph: {
     type: "website",
@@ -56,9 +64,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
 };
 
 export default function RootLayout({
@@ -66,8 +71,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'FarmRoket',
+    url: 'https://farmroket.com',
+    logo: 'https://farmroket.com/logo-farmroket.svg',
+    description: 'Compliance-ready supply chain SaaS platform powered by blockchain technology.',
+    foundingDate: '2024',
+    industry: 'Supply Chain Technology',
+    sameAs: [
+      'https://twitter.com/farmroket'
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      availableLanguage: 'English'
+    }
+  };
+
   return (
     <html lang="en" className="scroll-smooth" data-theme="dark">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${inter.variable} antialiased`}
       >

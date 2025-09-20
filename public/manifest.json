@@ -1,0 +1,21 @@
+{
+  "name": "FarmRoket - Compliance-Ready Supply Chain Platform",
+  "short_name": "FarmRoket",
+  "description": "Compliance-ready supply chain SaaS platform powered by blockchain technology",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo-farmroket.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en",
+  "scope": "/"
+}
