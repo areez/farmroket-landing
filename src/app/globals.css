@@ -3,16 +3,17 @@
 @tailwind utilities;
 
 :root {
-  /* Unified Brand Color Palette */
-  --primary-green: #55883d;
-  --primary-green-hover: #4a7635;
-  --primary-green-light: #a5ce39;
+  /* Unified Brand Color Palette - Avocado Green Primary */
+  --primary-green: #a5ce39;
+  --primary-green-hover: #94b833;
+  --primary-green-light: #b8d94a;
+  --avocado-green: #a5ce39;
   
   /* Color System */
   --color-primary: #a5ce39;
-  --color-secondary: #55883d;
+  --color-secondary: #94b833;
   --color-accent: #a5ce39;
-  --color-accent-bright: #55883d;
+  --color-accent-bright: #b8d94a;
   --color-surface: #1f2937;
   --color-background: #020617;
   --color-body: #d1d5db;
@@ -61,8 +62,16 @@
   --radius-xl: 1rem;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -71,6 +80,28 @@ body {
   background-attachment: fixed;
   color: var(--text-primary);
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Typography with Avocado Green Accents */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--avocado-green);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.text-primary-accent {
+  color: var(--avocado-green);
+}
+
+.text-secondary-accent {
+  color: var(--color-secondary);
+}
+
+.text-accent-bright {
+  color: var(--color-accent-bright);
 }
 
 /* Design System Components */
@@ -92,15 +123,28 @@ body {
   }
 
   .btn-primary-large {
-    @apply bg-avocado-green hover:bg-white text-gray-900 hover:text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg shadow-avocado-500/25 hover:shadow-avocado-600/10 hover:scale-105 flex items-center justify-center;
+    @apply bg-avocado-green hover:bg-avocado-600 text-gray-900 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200 flex items-center justify-center;
     height: 56px;
     letter-spacing: 0.025em;
   }
   
   .btn-secondary-large {
-    @apply bg-transparent hover:bg-transparent text-white border-2 border-white hover:border-avocado-green hover:text-avocado-green px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center;
+    @apply bg-transparent hover:bg-transparent text-white border-2 border-white hover:border-avocado-green hover:text-avocado-green px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200 flex items-center justify-center;
     height: 56px;
     letter-spacing: 0.025em;
+  }
+
+  /* Global Icon and Button Hover Styles */
+  .icon-hover {
+    @apply transition-colors duration-200 hover:text-primary;
+  }
+
+  .btn-icon {
+    @apply btn btn-ghost btn-sm btn-circle transition-colors duration-200 hover:bg-primary hover:bg-opacity-10 hover:text-primary;
+  }
+
+  .social-icon {
+    @apply btn btn-ghost btn-sm btn-circle transition-colors duration-200 hover:text-avocado-green hover:bg-avocado-green hover:bg-opacity-10;
   }
   
   /* Card Styles */
@@ -166,7 +210,7 @@ body {
   
   /* Container and Layout Utilities - Slim & Modern */
   .section-padding {
-    @apply py-12 md:py-16;
+    @apply py-6 md:py-8;
   }
 
   .container-padding {
@@ -174,11 +218,11 @@ body {
   }
 
   .section-container {
-    @apply max-w-5xl mx-auto px-4 md:px-6;
+    @apply max-w-6xl mx-auto px-2 md:px-6;
   }
 
   .content-container {
-    @apply max-w-5xl mx-auto;
+    @apply max-w-6xl mx-auto;
   }
   
   /* Futuristic Icon Styles */
@@ -218,6 +262,43 @@ body {
     @apply absolute inset-0 rounded-2xl bg-avocado-green/10 animate-pulse;
   }
   
+  /* Centralized Container System */
+  .section-container {
+    @apply py-16 lg:py-20;
+  }
+  
+  .section-wrapper {
+    @apply container mx-auto px-3 sm:px-6 lg:px-8;
+  }
+  
+  .section-content {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .section-content-narrow {
+    @apply max-w-4xl mx-auto;
+  }
+  
+  .section-content-medium {
+    @apply max-w-5xl mx-auto;
+  }
+  
+  .section-content-wide {
+    @apply max-w-6xl mx-auto;
+  }
+  
+  .section-header {
+    @apply text-center mb-12 lg:mb-16;
+  }
+  
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6;
+  }
+  
+  .section-subtitle {
+    @apply text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed;
+  }
+
   /* Form Styles */
   .form-input {
     @apply w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-avocado-green focus:ring-2 focus:ring-avocado-green/20 transition-all duration-200;
@@ -241,7 +322,7 @@ body {
   }
   
   .glass-avocado-card {
-    background: linear-gradient(to bottom right, rgba(165, 206, 57, 0.15), rgba(122, 150, 37, 0.1));
+    background: transparent;
     backdrop-filter: blur(12px);
     border: 1px solid rgba(165, 206, 57, 0.25);
     box-shadow: 0 10px 15px -3px rgba(148, 184, 47, 0.15);
@@ -268,4 +349,62 @@ body {
     border: 1px solid rgba(165, 206, 57, 0.15);
     box-shadow: 0 25px 50px -12px rgba(148, 184, 47, 0.25);
   }
+
+  /* Custom mockup-phone styling with subtle rounded corners */
+  .mockup-phone {
+    border-radius: 1.5rem !important;
+  }
+  
+  .mockup-phone .display {
+    border-radius: 1.25rem !important;
+  }
+}
+
+/* Bottom Dock Global Positioning */
+.bottom-dock {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  padding: 1rem !important;
+  pointer-events: none !important;
+  /* Safe area support for mobile devices */
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+  /* Ensure it's always visible */
+  transform: translateZ(0) !important;
+  will-change: transform !important;
+  /* Hide on desktop/PC view */
+  display: block !important;
+}
+
+/* Hide dock on large screens (desktop/PC) */
+@media (min-width: 1024px) {
+  .bottom-dock {
+    display: none !important;
+  }
+}
+
+.bottom-dock > div {
+  pointer-events: auto !important;
+}
+
+/* Ensure html and body don't interfere with dock positioning */
+html, body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+  min-height: 100vh;
+}
+
+/* Custom step styling for thinner outlines */
+.steps .step::before {
+  border-width: 1px !important;
+}
+
+.steps .step::after {
+  border-width: 1px !important;
 }

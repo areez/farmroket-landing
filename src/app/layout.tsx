@@ -15,6 +15,12 @@ export const metadata: Metadata = {
   authors: [{ name: "FarmRoket&trade; Team" }],
   creator: "FarmRoket&trade;",
   publisher: "FarmRoket&trade;",
+  viewport: {
+    width: "device-width",
+    initialScale: 1.0,
+    maximumScale: 1.0,
+    userScalable: false,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
