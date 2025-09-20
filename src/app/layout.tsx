@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -19,16 +19,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  other: {
-    'theme-color': '#000000',
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1.0,
-    maximumScale: 1.0,
-    userScalable: false,
-    themeColor: '#000000',
-  },
+
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -64,6 +55,14 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  maximumScale: 1.0,
+  userScalable: false,
+  themeColor: '#000000',
 };
 
 export default function RootLayout({
