@@ -168,9 +168,8 @@ export default function Footer() {
           {/* Contact Info */}
           <div className="text-center mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-base-300 pb-12 sm:pb-16 lg:pb-0">
             <div className="text-xs text-base-content/60 leading-relaxed px-4">
-              <p>Questions?</p>
               <p>
-                Write to us{' '}
+                Questions? Write to us at{' '}
                 <a href="mailto:contact@farmrocket.com" className="link link-primary font-medium hover:underline transition-all break-all">
                   contact@farmrocket.com
                 </a>
