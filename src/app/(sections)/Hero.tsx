@@ -9,7 +9,7 @@ export default function Hero() {
             <div className="flex justify-start mt-8 lg:mt-8">
               <div className="relative overflow-hidden text-xs sm:text-sm px-4 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium">
                 <div className="absolute inset-0 -top-2 -bottom-2 w-16 bg-gradient-to-r from-transparent via-white/50 to-transparent transform -skew-x-12 animate-shimmer"></div>
-                Compliance-First Supply Chain Platform
+                A Compliance-First Supply Chain Platform
               </div>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">

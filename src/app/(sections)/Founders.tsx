@@ -20,10 +20,12 @@ export default function Founders() {
                   {/* Avatar */}
                   <div className="flex-shrink-0">
                     <div className="avatar">
-                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                        <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
+                      <div className="w-24 h-24 rounded-full overflow-hidden">
+                        <img
+                          src="/images/main/founder-areez-afsar-khan.jpg"
+                          alt="Areez Afsar Khan"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                     <div className="text-center mt-2">
@@ -37,21 +39,21 @@ export default function Founders() {
                       Areez Afsar Khan
                     </h3>
                     <p className="text-base-content/70 mb-4">
-                      Deeply involved in agriculture, technology, and commodity trading, focusing on revolutionizing agro supply chains for safe, healthy food and stakeholder value through innovation.
+                      Areez is an entrepreneur with a strong background in agriculture, technology, and global commodity trading. With hands-on experience and proven expertise in building ventures, at FarmRoket™ he provides the vision and leadership to create safer, more transparent, and compliance-ready supply chain solution for global markets.
                     </p>
                     
 
 
                     {/* Social Links */}
                     <div className="flex gap-3 justify-center sm:justify-start">
-                      <a href="#" className="social-icon">
+                      <a href="https://www.linkedin.com/in/areezafsar/" target="_blank" rel="noopener noreferrer" className="social-icon">
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
-                      <a href="#" className="social-icon">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                      <a href="https://www.areezafsar.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                       </a>
                     </div>
@@ -67,10 +69,12 @@ export default function Founders() {
                   {/* Avatar */}
                   <div className="flex-shrink-0">
                     <div className="avatar">
-                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
-                        <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
+                      <div className="w-24 h-24 rounded-full overflow-hidden">
+                        <img
+                          src="/images/main/co-founder-h-m-shahadat.jpg"
+                          alt="H M Shahadat"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                     <div className="text-center mt-2">
@@ -81,24 +85,19 @@ export default function Founders() {
                   {/* Bio Content */}
                   <div className="flex-1 text-center sm:text-left">
                     <h3 className="text-2xl font-bold mb-2">
-                      H M Sahadat
+                      H M Shahadat
                     </h3>
                     <p className="text-base-content/70 mb-4">
-                      A seasoned technologist with decades of expertise in software engineering, solution architecture, and team leadership, now driving innovation to ensure customer-centric solution designs and team excellence.
+                      A seasoned technologist with decades of expertise in software engineering, solution architecture, and team leadership, now driving innovation to ensure customer-centric solution designs and team excellence. At FarmRoket™, he drives innovation, guiding the platform's technical vision and execution as its Chief Technology Advisor.
                     </p>
                     
 
 
                     {/* Social Links */}
                     <div className="flex gap-3 justify-center sm:justify-start">
-                      <a href="#" className="social-icon">
+                      <a href="https://www.linkedin.com/in/hmsahadat1803/" target="_blank" rel="noopener noreferrer" className="social-icon">
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                      </a>
-                      <a href="#" className="social-icon">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
                         </svg>
                       </a>
                     </div>
@@ -113,7 +112,7 @@ export default function Founders() {
             <div className="card bg-gradient-to-r from-primary/10 to-secondary/10 shadow-lg">
               <div className="card-body text-center">
                 <p className="text-lg text-base-content/80 max-w-3xl mx-auto mb-4">
-                  "We believe every food product should tell its complete story—from the farm where it was grown to the table where it's consumed. By combining blockchain technology with practical supply chain solutions, we're making transparency the new standard in global food trade."
+                  "We believe every fresh produce should tell its complete story—from the farm where it was grown to the table where it's consumed. By combining blockchain technology with practical supply chain solutions, we're making transparency the new standard in global food trade."
                 </p>
                 <p className="text-sm text-base-content/60 mb-6">
                   — Areez Afsar Khan, Founder, FarmRoket™
