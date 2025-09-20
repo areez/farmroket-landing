@@ -284,9 +284,9 @@ export default function Benefits() {
               <button className="btn-primary-large">
                 Start Free Trial
               </button>
-              <button className="btn-secondary-large">
+              <a href="https://outlook.office.com/bookwithme/user/48cc795072e74f5c997fec66dfc15db8@valiant.com.bd/meetingtype/dXqpDcIwYEqrf8q0lr6ijg2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" className="btn-secondary-large">
                 Schedule a Demo
-              </button>
+              </a>
             </div>
           </div>
         </div>

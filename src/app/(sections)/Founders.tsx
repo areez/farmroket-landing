@@ -1,6 +1,6 @@
 export default function Founders() {
   return (
-    <section className="section-container">
+    <section id="about" className="section-container">
       <div className="section-wrapper">
         <div className="section-content">
           <div className="text-center mb-12">

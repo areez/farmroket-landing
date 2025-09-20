@@ -1,6 +1,6 @@
 export default function BenefitsGrid() {
   return (
-    <section className="section-container">
+    <section id="benefits" className="section-container">
       <div className="section-wrapper">
         <div className="section-content">
           <div className="section-header">
@@ -159,12 +159,12 @@ export default function BenefitsGrid() {
                 Join leading suppliers who are already building trust and ensuring compliance with FarmRoket™
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="btn btn-primary btn-lg px-8">
+                <a href="https://outlook.office.com/bookwithme/user/48cc795072e74f5c997fec66dfc15db8@valiant.com.bd/meetingtype/dXqpDcIwYEqrf8q0lr6ijg2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" className="btn btn-primary btn-lg px-8">
                   Request Demo
-                </button>
-                <button className="btn btn-outline btn-lg px-8">
-                  View Case Studies
-                </button>
+                </a>
+                <a href="https://www.areezafsar.com/case/farm-to-fork-traceability" target="_blank" className="btn btn-outline btn-lg px-8">
+                  Read Case Study
+                </a>
               </div>
             </div>
           </div>

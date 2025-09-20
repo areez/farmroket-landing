@@ -1,6 +1,6 @@
 export default function HowItWorks() {
   return (
-    <section className="section-container">
+    <section id="how-it-works" className="section-container">
       <div className="section-wrapper">
         <div className="section-content">
           <div className="section-header">
@@ -180,9 +180,9 @@ export default function HowItWorks() {
                 <p className="text-base-content/70 mb-6 leading-relaxed">
                   Experience the complete traceability workflow with our interactive demo
                 </p>
-                <button className="btn btn-primary btn-lg">
+                <a href="https://outlook.office.com/bookwithme/user/48cc795072e74f5c997fec66dfc15db8@valiant.com.bd/meetingtype/dXqpDcIwYEqrf8q0lr6ijg2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" className="btn btn-primary btn-lg">
                   Try Interactive Demo
-                </button>
+                </a>
               </div>
             </div>
           </div>

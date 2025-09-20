@@ -9,12 +9,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "FarmRoket&trade; — Farm-to-Fork Traceability",
-  description: "Revolutionary blockchain-powered platform ensuring complete transparency and traceability from farm to fork. Track your food's journey with immutable records and QR verification.",
-  keywords: ["farm to fork", "traceability", "blockchain", "food safety", "agriculture", "supply chain", "transparency"],
-  authors: [{ name: "FarmRoket&trade; Team" }],
-  creator: "FarmRoket&trade;",
-  publisher: "FarmRoket&trade;",
+  title: "FarmRoket — Compliance-Ready Supply Chain SaaS Platform on Blockchain",
+  description: "Compliance-ready supply chain SaaS platform powered by blockchain technology. Ensure regulatory compliance, complete traceability, and transparency across your entire supply chain with decentralized ledgers.",
+  keywords: ["supply chain", "compliance", "blockchain", "SaaS platform", "traceability", "regulatory compliance", "decentralized ledgers", "transparency", "food safety", "agriculture"],
+  authors: [{ name: "FarmRoket Team" }],
+  creator: "FarmRoket",
+  publisher: "FarmRoket",
   viewport: {
     width: "device-width",
     initialScale: 1.0,
@@ -25,23 +25,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://farmroket.com",
-    title: "FarmRoket&trade; — Farm-to-Fork Traceability",
-    description: "Revolutionary blockchain-powered platform ensuring complete transparency and traceability from farm to fork. Track your food's journey with immutable records and QR verification.",
-    siteName: "FarmRoket&trade;",
+    title: "FarmRoket — Compliance-Ready Supply Chain SaaS Platform on Blockchain",
+    description: "Compliance-ready supply chain SaaS platform powered by blockchain technology. Ensure regulatory compliance, complete traceability, and transparency across your entire supply chain with decentralized ledgers.",
+    siteName: "FarmRoket",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://farmroket.com/images/main/farmroket-meta-image-00.jpg",
         width: 1200,
         height: 630,
-        alt: "FarmRoket&trade; - Farm-to-Fork Traceability Platform",
+        alt: "FarmRoket - Compliance-Ready Supply Chain SaaS Platform on Blockchain",
+        type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FarmRoket&trade; — Farm-to-Fork Traceability",
-    description: "Revolutionary blockchain-powered platform ensuring complete transparency and traceability from farm to fork.",
-    images: ["/og-image.jpg"],
+    title: "FarmRoket — Compliance-Ready Supply Chain SaaS Platform on Blockchain",
+    description: "Compliance-ready supply chain SaaS platform powered by blockchain technology. Ensure regulatory compliance and complete traceability.",
+    images: ["https://farmroket.com/images/main/farmroket-meta-image-00.jpg"],
     creator: "@farmroket",
   },
   robots: {

@@ -1,14 +1,15 @@
 export default function Hero() {
   return (
-    <section className="min-h-[80vh] lg:min-h-screen section-container -mt-12 lg:-mt-20">
-      <div className="section-wrapper py-8 lg:py-16">
+    <section className="min-h-[80vh] lg:min-h-screen section-container pt-1 md:pt-3 lg:pt-6">
+      <div className="section-wrapper py-4 lg:py-8">
         <div className="section-content">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-6 lg:space-y-8 order-1 lg:order-1 text-left">
-            <div className="flex justify-start">
-              <div className="text-xs sm:text-sm px-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium lg:-mt-4">
-                Compliance-First Supplychain Platform
+            <div className="flex justify-start mt-8 lg:mt-8">
+              <div className="relative overflow-hidden text-xs sm:text-sm px-4 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white font-medium">
+                <div className="absolute inset-0 -top-2 -bottom-2 w-16 bg-gradient-to-r from-transparent via-white/50 to-transparent transform -skew-x-12 animate-shimmer"></div>
+                Compliance-First Supply Chain Platform
               </div>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
@@ -40,19 +41,19 @@ export default function Hero() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-start mt-10 sm:mt-12 lg:mt-16">
-              <button className="btn btn-primary btn-lg w-full sm:w-auto">
+              <a href="https://outlook.office.com/bookwithme/user/48cc795072e74f5c997fec66dfc15db8@valiant.com.bd/meetingtype/dXqpDcIwYEqrf8q0lr6ijg2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" className="btn btn-primary btn-lg w-full sm:w-auto">
                 Request a Demo
-              </button>
-              <button className="btn btn-outline btn-lg w-full sm:w-auto">
+              </a>
+              <a href="#pilot-access" className="btn btn-outline btn-lg w-full sm:w-auto">
                 Join Waitlist
-              </button>
+              </a>
             </div>
           </div>
           
           {/* Right Content - Product Mockups */}
           <div className="relative mt-8 lg:mt-0 order-2 lg:order-2 flex justify-center items-center">
             {/* Main Supplier Dashboard Mockup */}
-            <div className="mockup-window border bg-base-300 shadow-2xl w-full max-w-xs sm:max-w-md lg:max-w-lg mx-auto">
+            <div className="mockup-window border bg-base-300 shadow-2xl w-full max-w-xs sm:max-w-md lg:max-w-lg mx-auto relative -left-4 sm:-left-6 lg:-left-8">
               <div className="flex justify-center px-6 py-12 lg:py-16 bg-base-200">
                 <div className="w-full max-w-md">
                   {/* Dashboard Header */}
@@ -104,25 +105,25 @@ export default function Hero() {
             </div>
             
             {/* Floating Farmer Mobile App Mockup */}
-            <div className="mockup-phone absolute -bottom-4 -right-4 sm:-top-4 sm:-right-4 lg:-bottom-12 lg:-right-12 w-24 sm:w-40 lg:w-48 shadow-xl">
+            <div className="mockup-phone absolute -bottom-4 right-0 sm:-top-4 sm:right-0 lg:-bottom-12 lg:right-0 w-24 sm:w-40 lg:w-48 shadow-xl">
               <div className="camera"></div>
               <div className="display">
                 <div className="artboard artboard-demo phone-1 bg-base-100">
-                  <div className="p-2 lg:p-3">
-                    <div className="text-center mb-2 lg:mb-3">
-                      <div className="badge badge-accent text-xs">Farmer App</div>
+                  <div className="p-1 sm:p-2 lg:p-3">
+                    <div className="text-center mb-1 sm:mb-2 lg:mb-3">
+                      <div className="badge badge-accent text-[8px] sm:text-xs">Farmer App</div>
                     </div>
-                    <div className="space-y-1 lg:space-y-2">
+                    <div className="space-y-0.5 sm:space-y-1 lg:space-y-2">
                       <div className="card bg-base-200 shadow">
-                        <div className="card-body p-2">
-                          <h4 className="text-xs font-medium">QR Scanner</h4>
-                          <p className="text-xs opacity-70">Instant Verification</p>
+                        <div className="card-body p-1 sm:p-2">
+                          <h4 className="text-[8px] sm:text-xs font-medium">QR Scanner</h4>
+                          <p className="text-[7px] sm:text-xs opacity-70">Instant Verification</p>
                         </div>
                       </div>
                       <div className="card bg-base-200 shadow">
-                        <div className="card-body p-2">
-                          <h4 className="text-xs font-medium">Data Entry</h4>
-                          <p className="text-xs opacity-70">Simple Records</p>
+                        <div className="card-body p-1 sm:p-2">
+                          <h4 className="text-[8px] sm:text-xs font-medium">Data Entry</h4>
+                          <p className="text-[7px] sm:text-xs opacity-70">Simple Records</p>
                         </div>
                       </div>
                     </div>

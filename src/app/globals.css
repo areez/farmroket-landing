@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes shimmer {
+  0% {
+    transform: translateX(-200%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(500%) skewX(-12deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 8s ease-in-out infinite;
+}
+
 :root {
   /* Unified Brand Color Palette - Avocado Green Primary */
   --primary-green: #a5ce39;
@@ -218,7 +231,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .section-container {
-    @apply max-w-6xl mx-auto px-2 md:px-6;
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .content-container {
@@ -263,12 +276,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   /* Centralized Container System */
-  .section-container {
-    @apply py-16 lg:py-20;
-  }
-  
   .section-wrapper {
-    @apply container mx-auto px-3 sm:px-6 lg:px-8;
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20;
   }
   
   .section-content {
@@ -277,6 +286,11 @@ h1, h2, h3, h4, h5, h6 {
   
   .section-content-narrow {
     @apply max-w-4xl mx-auto;
+  }
+  
+  /* Responsive section spacing - less aggressive on tablets */
+  .section-spacing {
+    @apply py-6 sm:py-8 md:py-10 lg:py-16;
   }
   
   .section-content-medium {

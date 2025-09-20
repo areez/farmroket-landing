@@ -95,7 +95,7 @@ export default function WaitlistForm() {
   }
 
   return (
-    <section className="section-container">
+    <section id="contact" className="section-container">
       <div className="section-wrapper">
         <div className="section-content">
           {/* Header */}
@@ -186,7 +186,7 @@ export default function WaitlistForm() {
             {/* Form Column */}
             <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
               <div className="card-body p-4 lg:p-6">
-                <h3 className="text-xl font-bold mb-6 text-center">Apply for Pilot Access</h3>
+                <h3 id="pilot-access" className="text-xl font-bold mb-6 text-center">Apply for Pilot Access</h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-4">
                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -298,7 +298,7 @@ export default function WaitlistForm() {
                   {/* Current Challenges */}
                   <div className="form-control col-span-full">
                     <label className="label pb-1">
-                      <span className="label-text font-semibold text-sm">Challenges Facing (Select all that apply)</span>
+                      <span className="label-text font-semibold text-sm">Challenges Facing</span>
                     </label>
                     <div className="dropdown dropdown-bottom w-full">
                       <div tabIndex={0} role="button" className="input input-bordered input-md focus:input-primary w-full flex justify-between items-center cursor-pointer">
@@ -337,7 +337,7 @@ export default function WaitlistForm() {
                   {/* Interested Features */}
                   <div className="form-control col-span-full">
                     <label className="label pb-1">
-                      <span className="label-text font-semibold text-sm">Interested in Features (Select all that apply)</span>
+                      <span className="label-text font-semibold text-sm">Interested in Features</span>
                     </label>
                     <div className="dropdown dropdown-bottom w-full">
                       <div tabIndex={0} role="button" className="input input-bordered input-md focus:input-primary w-full flex justify-between items-center cursor-pointer">

@@ -1,6 +1,6 @@
 export default function WhySuppliersNeedThis() {
   return (
-    <section className="section-container">
+    <section id="compliance" className="section-container">
       <div className="section-wrapper">
         <div className="section-content max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -221,9 +221,9 @@ export default function WhySuppliersNeedThis() {
                   Join forward-thinking suppliers who are already building compliant, transparent supply chains.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="btn btn-primary btn-lg">
+                  <a href="https://outlook.office.com/bookwithme/user/48cc795072e74f5c997fec66dfc15db8@valiant.com.bd/meetingtype/dXqpDcIwYEqrf8q0lr6ijg2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" className="btn btn-primary btn-lg">
                     Request Demo
-                  </button>
+                  </a>
                   <button className="btn btn-outline btn-lg">
                     Compliance Guide
                   </button>

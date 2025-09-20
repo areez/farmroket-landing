@@ -1,6 +1,6 @@
 export default function KeyFeatures() {
   return (
-    <section className="section-container">
+    <section id="features" className="section-container">
       <div className="section-wrapper">
         <div className="section-content">
           <div className="text-center mb-16">
