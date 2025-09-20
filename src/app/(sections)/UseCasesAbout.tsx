@@ -46,29 +46,29 @@ export default function UseCasesAbout() {
       <div className="section-container">
         <div className="content-container">
           {/* Use Cases Section */}
-          <div className="mb-20">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="mb-12">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Use Cases */}
               <div>
                 <h2 className="heading-lg mb-6">
                   Regulatory Compliance Made Simple
                 </h2>
-                <p className="text-xl text-body mb-8 leading-relaxed">
+                <p className="text-body mb-6 leading-normal">
                   Stay ahead of evolving food safety regulations with automated compliance tracking and real-time reporting. Our platform ensures you&apos;re always audit-ready.
                 </p>
                 
                 <div className="space-y-6">
                   {useCases.map((useCase, index) => (
                     <div key={index} className="border-l-4 border-accent pl-6">
-                      <h3 className="text-xl font-semibold text-primary mb-2">
+                      <h3 className="heading-sm text-primary mb-3">
                         {useCase.title}
                       </h3>
-                      <p className="text-body mb-3">
+                      <p className="text-body mb-4">
                         {useCase.description}
                       </p>
                       <a 
                         href={useCase.link} 
-                        className="text-accent hover:text-accent-focus font-medium inline-flex items-center"
+                        className="text-accent hover:text-avocado-600 font-medium inline-flex items-center"
                       >
                         Learn more
                         <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -134,7 +134,7 @@ export default function UseCasesAbout() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {founders.map((founder, index) => (
               <div key={index} className="card">
                 <div className="card-body text-center">
@@ -180,7 +180,7 @@ export default function UseCasesAbout() {
           </div>
 
           <div className="text-center mt-24">
-            <div className="max-w-3xl mx-auto text-center">
+            <div className="max-w-5xl mx-auto text-center">
               <h3 className="heading-md mb-6">
                 Our Mission
               </h3>

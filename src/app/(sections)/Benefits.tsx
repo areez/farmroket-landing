@@ -53,10 +53,10 @@ export default function Benefits() {
       <div className="section-container">
         <div className="content-container">
           <div className="text-center mb-20">
-            <h2 className="heading-lg">
+            <h2 className="heading-lg mb-4">
               Benefits for Every Stakeholder
             </h2>
-            <p className="text-body max-w-3xl mx-auto">
+            <p className="text-xl text-body max-w-3xl mx-auto">
               Our platform delivers value across the entire food ecosystem, from <strong>producers</strong> to <strong>consumers</strong>.
             </p>
           </div>
@@ -64,35 +64,34 @@ export default function Benefits() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {userTypes.map((userType, index) => {
             return (
-              <div key={index} className="card-primary">
-                <div className="flex flex-col items-center text-center mb-8">
+              <div key={index} className="card-primary p-8">
+                <div className="flex flex-col items-center text-center mb-6">
                   {userType.icon}
-                  <h3 className="heading-sm mt-6">
+                  <h3 className="heading-sm mt-4">
                     {userType.title}
                   </h3>
                 </div>
-                <ul className="space-y-4">
+                <div className="text-center">
                   {userType.benefits.map((benefit, benefitIndex) => (
-                    <li key={benefitIndex} className="text-body flex items-start">
-                      <span className="text-emerald-400 mr-3 text-lg">•</span>
+                    <p key={benefitIndex} className="text-body leading-relaxed">
                       {benefit}
-                    </li>
+                    </p>
                   ))}
-                </ul>
+                </div>
               </div>
             );
           })}
           </div>
 
-          <div className="mt-16 text-center">
-            <div className="max-w-4xl mx-auto text-center py-16">
+          <div className="mt-12 text-center">
+            <div className="max-w-5xl mx-auto text-center py-12">
               <h3 className="heading-md">
                 Join the Food Transparency Revolution
               </h3>
-              <p className="text-body mb-12">
+              <p className="text-body mb-8">
                 Be part of the movement that&apos;s transforming how we track, verify, and trust our food supply chains.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="btn-primary">
                   Join Waitlist
                 </button>

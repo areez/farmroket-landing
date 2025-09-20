@@ -7,7 +7,7 @@ export default function WhyNow() {
             <h2 className="heading-lg mb-4">
               Why Now?
             </h2>
-            <p className="text-xl text-body max-w-3xl mx-auto">
+            <p className="text-xl text-body max-w-5xl mx-auto">
               The time to act is now - regulatory changes are coming fast
             </p>
           </div>
@@ -49,11 +49,11 @@ export default function WhyNow() {
 
           {/* Call to Action */}
           <div className="text-center mt-20">
-            <div className="bg-gradient-to-br from-emerald-500/10 to-emerald-600/10 border border-emerald-400/20 rounded-xl py-20 px-12">
+            <div className="bg-gradient-to-br from-avocado-500/10 to-avocado-600/10 border border-white/20 rounded-xl py-20 px-12">
               <h3 className="heading-xl mb-8">
                 Don&apos;t Wait Until It&apos;s Too Late
               </h3>
-              <p className="text-body-lg mb-12 max-w-4xl mx-auto">
+              <p className="text-body-lg mb-12 max-w-5xl mx-auto">
                 Start building your traceability infrastructure today and stay ahead of regulatory requirements.
               </p>
               <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">

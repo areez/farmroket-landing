@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 :root {
-  /* Unified Color Palette */
-  --primary-green: #10B981;
-  --primary-green-hover: #059669;
-  --primary-green-light: #34D399;
+  /* Unified Brand Color Palette */
+  --primary-green: #55883d;
+  --primary-green-hover: #4a7635;
+  --primary-green-light: #a5ce39;
   
   /* Color System */
-  --color-primary: #f9fafb;
-  --color-secondary: #6b7280;
-  --color-accent: #10b981;
-  --color-accent-bright: #34d399;
+  --color-primary: #a5ce39;
+  --color-secondary: #55883d;
+  --color-accent: #a5ce39;
+  --color-accent-bright: #55883d;
   --color-surface: #1f2937;
-  --color-background: #111827;
+  --color-background: #020617;
   --color-body: #d1d5db;
   
   /* Dark Theme Colors */
-  --bg-primary: #0F172A;
+  --bg-primary: #020617;
   --bg-secondary: #1E293B;
   --bg-tertiary: #334155;
   --bg-card: #1E293B;
@@ -67,7 +67,7 @@ html {
 
 body {
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, #0F172A 25%, #1E293B 75%, var(--bg-secondary) 100%);
+  background: linear-gradient(135deg, #020617 0%, #0F172A 15%, #1E293B 35%, #334155 65%, #475569 85%, var(--bg-secondary) 100%);
   background-attachment: fixed;
   color: var(--text-primary);
   line-height: 1.6;
@@ -77,28 +77,28 @@ body {
 @layer components {
   /* Uniform Button Styles */
   .btn-primary {
-    @apply bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-emerald-500/25 text-base h-12;
+    @apply bg-avocado-green hover:bg-white text-gray-900 hover:text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-avocado-500/25 text-base h-12 flex items-center justify-center;
     letter-spacing: 0.025em;
   }
 
   .btn-secondary {
-    @apply bg-transparent border-2 border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-base h-12 flex items-center justify-center;
+    @apply bg-transparent border-2 border-white text-white hover:bg-transparent hover:border-avocado-green hover:text-avocado-green px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-base h-12 flex items-center justify-center;
     letter-spacing: 0.025em;
   }
 
   .btn-accent {
-    @apply bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl text-base h-12;
+    @apply bg-gradient-to-r from-avocado-green to-avocado-600 hover:from-avocado-600 hover:to-avocado-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl text-base h-12 flex items-center justify-center;
     letter-spacing: 0.025em;
   }
 
   .btn-primary-large {
-    @apply bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 border-0;
+    @apply bg-avocado-green hover:bg-white text-gray-900 hover:text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg shadow-avocado-500/25 hover:shadow-avocado-600/10 hover:scale-105 flex items-center justify-center;
     height: 56px;
     letter-spacing: 0.025em;
   }
-
+  
   .btn-secondary-large {
-    @apply bg-transparent hover:bg-emerald-600/10 text-emerald-400 border-2 border-emerald-400 hover:border-emerald-300 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center;
+    @apply bg-transparent hover:bg-transparent text-white border-2 border-white hover:border-avocado-green hover:text-avocado-green px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center;
     height: 56px;
     letter-spacing: 0.025em;
   }
@@ -109,81 +109,82 @@ body {
   }
   
   .card-hover {
-    @apply hover:bg-gray-800/70 hover:border-gray-600/50 hover:shadow-lg hover:shadow-emerald-500/10 hover:-translate-y-1;
+    @apply hover:bg-gray-800/70 hover:border-gray-600/50 hover:shadow-lg hover:shadow-avocado-500/10 hover:-translate-y-1;
   }
   
   .card-primary {
-    @apply bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 transition-all duration-300 hover:bg-gray-800/70 hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-500/10;
+    @apply bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 transition-all duration-300 hover:bg-gray-800/70 hover:border-avocado-500/30 hover:shadow-lg hover:shadow-avocado-500/10;
   }
   
   .card-accent {
-    @apply bg-gradient-to-br from-emerald-500/10 to-emerald-400/10 border-emerald-500/20;
+    @apply bg-gradient-to-br from-avocado-500/10 to-white/10 border-avocado-500/20;
   }
   
-  /* Typography Hierarchy with Inter */
+  /* Typography Hierarchy with Inter - Modern & Futuristic */
   .heading-xl {
-    @apply text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-8;
+    @apply text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight mb-6;
+    font-family: var(--font-inter), sans-serif;
+    letter-spacing: -0.03em;
+  }
+
+  .heading-lg {
+    @apply text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight mb-4;
     font-family: var(--font-inter), sans-serif;
     letter-spacing: -0.02em;
   }
 
-  .heading-lg {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6;
+  .heading-md {
+    @apply text-lg md:text-xl lg:text-2xl font-semibold text-white leading-tight mb-3;
     font-family: var(--font-inter), sans-serif;
     letter-spacing: -0.01em;
   }
 
-  .heading-md {
-    @apply text-2xl md:text-3xl lg:text-4xl font-semibold text-white leading-tight mb-4;
-    font-family: var(--font-inter), sans-serif;
-  }
-
   .heading-sm {
-    @apply text-xl md:text-2xl lg:text-3xl font-medium text-white leading-tight mb-3;
+    @apply text-base md:text-lg lg:text-xl font-medium text-white leading-tight mb-2;
     font-family: var(--font-inter), sans-serif;
   }
 
   .text-body {
-    @apply text-lg text-gray-300 leading-relaxed mb-4;
+    @apply text-sm text-gray-300 leading-normal mb-3;
   }
 
   .text-body-sm {
-    @apply text-base text-gray-400 leading-relaxed mb-3;
+    @apply text-xs text-gray-400 leading-tight mb-2;
   }
 
   .text-body-lg {
-    @apply text-xl text-gray-300 leading-relaxed;
+    @apply text-base text-gray-300 leading-normal;
   }
   
   .text-accent {
-    @apply text-emerald-400 font-semibold;
+    @apply text-avocado-green font-semibold;
   }
   
   .text-accent-bright {
     color: var(--color-accent-bright);
   }
   
-  /* Container and Layout Utilities */
+  /* Container and Layout Utilities - Slim & Modern */
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-16;
   }
 
   .container-padding {
-    @apply px-6 md:px-8;
+    @apply px-4 md:px-6;
   }
 
   .section-container {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-5xl mx-auto px-4 md:px-6;
   }
 
   .content-container {
-    @apply max-w-6xl mx-auto;
+    @apply max-w-5xl mx-auto;
   }
   
   /* Futuristic Icon Styles */
   .icon-gradient {
     stroke: url(#iconGradient);
-    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.3));
+    filter: drop-shadow(0 0 8px rgba(139, 195, 74, 0.3));
   }
 
   .icon-slim {
@@ -202,7 +203,7 @@ body {
   }
 
   .timeline-line {
-    @apply absolute top-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent transform z-0;
+    @apply absolute top-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-avocado-green/60 to-transparent transform z-0;
   }
 
   .timeline-step {
@@ -210,19 +211,61 @@ body {
   }
 
   .timeline-number {
-    @apply w-16 h-16 bg-gradient-to-br from-emerald-400/20 to-emerald-600/20 border-2 border-emerald-400/40 rounded-2xl flex items-center justify-center text-emerald-400 font-bold text-xl mb-6 shadow-lg shadow-emerald-500/10 backdrop-blur-sm;
+    @apply w-16 h-16 bg-gradient-to-br from-avocado-green/20 to-avocado-600/20 border-2 border-avocado-green/40 rounded-2xl flex items-center justify-center text-avocado-green font-bold text-xl mb-6 shadow-lg shadow-avocado-500/10 backdrop-blur-sm;
   }
 
   .timeline-pulse {
-    @apply absolute inset-0 rounded-2xl bg-emerald-400/10 animate-pulse;
+    @apply absolute inset-0 rounded-2xl bg-avocado-green/10 animate-pulse;
   }
   
   /* Form Styles */
   .form-input {
-    @apply w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all duration-200;
+    @apply w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-avocado-green focus:ring-2 focus:ring-avocado-green/20 transition-all duration-200;
   }
   
   .form-input-large {
-    @apply w-full px-6 py-5 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 transition-all duration-200 text-lg;
+    @apply w-full px-6 py-5 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-avocado-green focus:ring-2 focus:ring-avocado-green/20 transition-all duration-200 text-lg;
+  }
+  
+  /* Avocado Glass Effects */
+  .glass-avocado {
+    @apply bg-avocado-green/10 backdrop-blur-md border border-avocado-green/20 shadow-lg shadow-avocado-500/10;
+  }
+  
+  .glass-avocado-light {
+    @apply bg-avocado-green/5 backdrop-blur-sm border border-avocado-green/10 shadow-md shadow-avocado-500/5;
+  }
+  
+  .glass-avocado-strong {
+    @apply bg-avocado-green/20 backdrop-blur-lg border border-avocado-green/30 shadow-xl shadow-avocado-500/20;
+  }
+  
+  .glass-avocado-card {
+    background: linear-gradient(to bottom right, rgba(165, 206, 57, 0.15), rgba(122, 150, 37, 0.1));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(165, 206, 57, 0.25);
+    box-shadow: 0 10px 15px -3px rgba(148, 184, 47, 0.15);
+    border-radius: 0.75rem;
+  }
+  
+  .glass-avocado-light {
+    background: rgba(165, 206, 57, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(165, 206, 57, 0.2);
+    box-shadow: 0 4px 6px -1px rgba(148, 184, 47, 0.1);
+  }
+  
+  .glass-avocado-strong {
+    background: linear-gradient(to bottom right, rgba(165, 206, 57, 0.25), rgba(122, 150, 37, 0.15));
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(165, 206, 57, 0.35);
+    box-shadow: 0 20px 25px -5px rgba(148, 184, 47, 0.2);
+  }
+  
+  .glass-avocado-overlay {
+    background: rgba(165, 206, 57, 0.08);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(165, 206, 57, 0.15);
+    box-shadow: 0 25px 50px -12px rgba(148, 184, 47, 0.25);
   }
 }

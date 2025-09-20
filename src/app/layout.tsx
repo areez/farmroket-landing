@@ -9,31 +9,31 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "FarmRoket — Farm-to-Fork Traceability",
+  title: "FarmRoket&trade; — Farm-to-Fork Traceability",
   description: "Revolutionary blockchain-powered platform ensuring complete transparency and traceability from farm to fork. Track your food's journey with immutable records and QR verification.",
   keywords: ["farm to fork", "traceability", "blockchain", "food safety", "agriculture", "supply chain", "transparency"],
-  authors: [{ name: "FarmRoket Team" }],
-  creator: "FarmRoket",
-  publisher: "FarmRoket",
+  authors: [{ name: "FarmRoket&trade; Team" }],
+  creator: "FarmRoket&trade;",
+  publisher: "FarmRoket&trade;",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://farmroket.com",
-    title: "FarmRoket — Farm-to-Fork Traceability",
+    title: "FarmRoket&trade; — Farm-to-Fork Traceability",
     description: "Revolutionary blockchain-powered platform ensuring complete transparency and traceability from farm to fork. Track your food's journey with immutable records and QR verification.",
-    siteName: "FarmRoket",
+    siteName: "FarmRoket&trade;",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "FarmRoket - Farm-to-Fork Traceability Platform",
+        alt: "FarmRoket&trade; - Farm-to-Fork Traceability Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FarmRoket — Farm-to-Fork Traceability",
+    title: "FarmRoket&trade; — Farm-to-Fork Traceability",
     description: "Revolutionary blockchain-powered platform ensuring complete transparency and traceability from farm to fork.",
     images: ["/og-image.jpg"],
     creator: "@farmroket",

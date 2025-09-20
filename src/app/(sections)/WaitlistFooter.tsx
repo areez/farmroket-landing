@@ -49,22 +49,22 @@ export default function WaitlistFooter() {
       <section className="section-padding">
       <div className="section-container">
         <div className="content-container">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-emerald-500/10 to-emerald-600/10 border border-emerald-400/20 rounded-xl p-12 mb-8">
-              <h2 className="heading-lg mb-6">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm p-8 mb-6 rounded-xl">
+              <h2 className="heading-lg mb-4">
                 Get Pilot Access
               </h2>
-              <p className="text-xl text-emerald-100 mb-6 max-w-3xl mx-auto">
+              <p className="text-body-lg text-gray-100 mb-4 max-w-2xl mx-auto">
                 Be among the first to experience the future of food traceability. 
                 Get early access and exclusive updates on our platform launch.
               </p>
-              <p className="text-emerald-400 font-semibold text-lg mb-8">
-                Q4 2025 Expected Launch
+              <p className="text-avocado-green font-semibold text-base mb-6">
+                Q1 2026 Expected Launch
               </p>
 
-            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 shadow-2xl p-8 max-w-2xl mx-auto rounded-xl">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-6">
+            <div className="bg-gray-900/50 backdrop-blur-sm p-6 max-w-xl mx-auto rounded-xl">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-4">
                   <input
                      type="text"
                      name="name"
@@ -97,7 +97,7 @@ export default function WaitlistFooter() {
                 <button
                    type="submit"
                    disabled={isSubmitting}
-                   className="btn-primary-large w-full mt-8"
+                   className="btn-primary-large w-full mt-6"
                  >
                   {isSubmitting ? (
                     <>
@@ -109,7 +109,7 @@ export default function WaitlistFooter() {
                   )}
                 </button>
                 
-                <p className="text-sm text-gray-500 text-center mt-4">
+                <p className="text-xs text-gray-500 text-center mt-3">
                   We&apos;ll only email about pilot and product updates.
                 </p>
 
@@ -133,7 +133,7 @@ export default function WaitlistFooter() {
               </form>
             </div>
 
-              <div className="mt-12 grid md:grid-cols-3 gap-8 text-emerald-100">
+              <div className="mt-12 grid md:grid-cols-3 gap-8 text-gray-100">
                 <div className="text-center">
                   <div className="text-3xl font-bold mb-2">500+</div>
                   <div>Early Adopters</div>
@@ -156,11 +156,11 @@ export default function WaitlistFooter() {
       {/* Footer */}
       <footer className="section-padding bg-surface">
         <div className="container mx-auto container-padding">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
               {/* Company Info */}
               <div className="md:col-span-2">
-                <h3 className="text-2xl font-bold text-accent mb-4">FarmRocket</h3>
+                <h3 className="text-2xl font-bold text-accent mb-4">FarmRoket&trade;</h3>
                 <p className="text-body mb-4 max-w-md">
                   Revolutionizing food supply chains with blockchain technology. 
                   Complete transparency from farm to fork.
@@ -219,7 +219,7 @@ export default function WaitlistFooter() {
             <div className="divider my-8"></div>
             
             <div className="flex flex-col md:flex-row justify-between items-center w-full">
-              <p className="text-body">&copy; 2024-2025 FarmRocket. All rights reserved.</p>
+              <p className="text-body">&copy; 2024-2025 FarmRoket&trade;. All rights reserved.</p>
               <div className="flex space-x-6 mt-4 md:mt-0">
                 <a href="#privacy" className="text-body hover:text-accent transition-colors">Privacy Policy</a>
                 <a href="#terms" className="text-body hover:text-accent transition-colors">Terms of Service</a>
