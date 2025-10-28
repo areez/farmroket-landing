@@ -20,18 +20,12 @@ export default function AdminDashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
-  const [user, setUser] = useState<{ id: string; email: string; role?: string } | null>(null);
+  const [user, setUser] = useState<{ id: string; email?: string; role?: string } | null>(null);
   const [selectedApplication, setSelectedApplication] = useState<PilotApplication | null>(null);
   const [showDetailsModal, setShowDetailsModal] = useState(false);
   const [adminNotes, setAdminNotes] = useState<string>('');
   const [isUpdatingNotes, setIsUpdatingNotes] = useState(false);
   const [isAuthChecking, setIsAuthChecking] = useState(true);
-
-  useEffect(() => {
-    checkAuth();
-    fetchApplications();
-    fetchStats();
-  }, [checkAuth]);
 
   const checkAuth = useCallback(async () => {
     try {
@@ -60,6 +54,12 @@ export default function AdminDashboard() {
       router.push('/');
     }
   }, [router]);
+
+  useEffect(() => {
+    checkAuth();
+    fetchApplications();
+    fetchStats();
+  }, [checkAuth]);
 
   const fetchApplications = async () => {
     try {

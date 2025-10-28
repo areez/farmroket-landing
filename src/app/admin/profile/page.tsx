@@ -6,7 +6,7 @@ import { supabase } from '@/lib/supabase';
 
 export default function AdminProfile() {
   const router = useRouter();
-  const [user, setUser] = useState<{ id: string; email: string; role?: string } | null>(null);
+  const [user, setUser] = useState<{ id: string; email?: string; role?: string } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isUpdating, setIsUpdating] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
