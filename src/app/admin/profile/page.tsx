@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 
 export default function AdminProfile() {
@@ -21,11 +22,7 @@ export default function AdminProfile() {
   const [otp, setOtp] = useState('');
   const [pendingEmail, setPendingEmail] = useState('');
 
-  useEffect(() => {
-    checkAuth();
-  }, []);
-
-  const checkAuth = async () => {
+  const checkAuth = useCallback(async () => {
     try {
       const { data: { session } } = await supabase.auth.getSession();
       
@@ -55,7 +52,11 @@ export default function AdminProfile() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [router]);
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
 
   const handleEmailUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -186,7 +187,7 @@ export default function AdminProfile() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
-              <img src="/icon-farmroket.svg" alt="FarmRoket" className="w-8 h-8" />
+              <Image src="/icon-farmroket.svg" alt="FarmRoket" width={32} height={32} className="w-8 h-8" />
               <span className="text-slate-400 leading-none">|</span>
               <h1 className="text-sm font-semibold text-white leading-none">Admin Profile</h1>
             </div>

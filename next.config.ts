@@ -9,9 +9,6 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
   },
   
-  // Optimize for production
-  swcMinify: true,
-  
   // Handle redirects for authentication
   async redirects() {
     return [

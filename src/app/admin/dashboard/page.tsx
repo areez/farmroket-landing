@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
 import { PilotApplication } from '@/types/database';
 
@@ -20,7 +21,6 @@ export default function AdminDashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
-  const [user, setUser] = useState<{ id: string; email?: string; role?: string } | null>(null);
   const [selectedApplication, setSelectedApplication] = useState<PilotApplication | null>(null);
   const [showDetailsModal, setShowDetailsModal] = useState(false);
   const [adminNotes, setAdminNotes] = useState<string>('');
@@ -47,7 +47,6 @@ export default function AdminDashboard() {
         return;
       }
 
-      setUser(session.user);
       setIsAuthChecking(false);
     } catch (error: unknown) {
       console.error('Auth check failed:', error);
@@ -221,7 +220,7 @@ export default function AdminDashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <img src="/icon-farmroket.svg" alt="FarmRoket" className="h-8 w-8" />
+              <Image src="/icon-farmroket.svg" alt="FarmRoket" width={32} height={32} className="h-8 w-8" />
               <span className="text-slate-400 leading-none">|</span>
               <h1 className="text-sm font-semibold text-white leading-none">Dashboard</h1>
             </div>
