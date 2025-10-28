@@ -57,12 +57,6 @@ const config = {
   plugins: [daisyui],
   daisyui: {
     themes: ['dark', 'night', 'forest'],
-    base: true,
-    styled: true,
-    utils: true,
-    prefix: '',
-    logs: true,
-    themeRoot: ':root',
   },
 };
 

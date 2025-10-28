@@ -4,14 +4,17 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useState } from 'react';
 import AuthModal from '@/components/AuthModal';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const { user, signOut } = useAuth();
   const [showAuthModal, setShowAuthModal] = useState(false);
+  const router = useRouter();
 
   const handleSignOut = async () => {
     try {
       await signOut();
+      router.push('/');
     } catch (error) {
       console.error('Error signing out:', error);
     }
@@ -59,41 +62,30 @@ export default function Navbar() {
           {/* Empty center for mobile, dock menu will be fixed separately */}
         </div>
         <div className="navbar-end">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
             {user ? (
               <div className="flex items-center gap-2">
                 <div className="dropdown dropdown-end">
-                  <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                    <div className="w-8 rounded-full bg-primary flex items-center justify-center">
-                      <span className="text-primary-content text-sm font-medium">
-                        {user.user_metadata?.full_name?.charAt(0) || user.email?.charAt(0) || 'U'}
-                      </span>
-                    </div>
+                  <div tabIndex={0} role="button" className="btn btn-ghost btn-circle btn-sm h-8 w-8 min-h-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
                   </div>
-                  <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li>
-                      <div className="text-sm">
-                        <div className="font-medium">{user.user_metadata?.full_name || 'User'}</div>
-                        <div className="text-base-content/60">{user.email}</div>
-                      </div>
+                  <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow-xl bg-nile-800 border border-nile-700 rounded-xl w-56">
+                    <li className="mb-1">
+                      <Link href="/admin/dashboard" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-nile-700 text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        <span className="text-sm font-medium">Dashboard</span>
+                      </Link>
                     </li>
-                    <li><hr className="my-1" /></li>
-                    {user.app_metadata?.role === 'admin' && (
-                      <li>
-                        <Link href="/admin" className="flex items-center gap-2">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                          </svg>
-                          Admin Dashboard
-                        </Link>
-                      </li>
-                    )}
                     <li>
-                      <button onClick={handleSignOut} className="flex items-center gap-2 text-error">
+                      <button onClick={handleSignOut} className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-red-900/20 text-red-300 hover:text-red-200 transition-colors w-full">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                         </svg>
-                        Sign Out
+                        <span className="text-sm font-medium">Sign Out</span>
                       </button>
                     </li>
                   </ul>
@@ -102,7 +94,7 @@ export default function Navbar() {
             ) : (
               <button 
                 onClick={() => setShowAuthModal(true)}
-                className="btn btn-ghost btn-sm"
+                className="btn btn-ghost"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
@@ -169,7 +161,10 @@ export default function Navbar() {
       <AuthModal 
         isOpen={showAuthModal} 
         onClose={() => setShowAuthModal(false)} 
-        onSuccess={() => setShowAuthModal(false)}
+        onSuccess={() => {
+          setShowAuthModal(false);
+          router.push('/admin/dashboard');
+        }}
       />
     </>
   );

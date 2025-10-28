@@ -74,36 +74,36 @@ export default function Benefits() {
           {/* Reduce Risks */}
           <div className="card card-hover">
             <div className="flex items-start gap-6">
-              <div className="w-20 h-20 bg-blue-500/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-20 h-20 bg-brand-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+          <svg className="w-10 h-10 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl font-bold mb-4 text-blue-400">Reduce Compliance Risks by 90%</h3>
+                <h3 className="text-2xl font-bold mb-4 text-brand-primary">Reduce Compliance Risks by 90%</h3>
                 <p className="text-lg leading-relaxed mb-6 text-gray-300">
                   Automated compliance monitoring and documentation ensures you meet all international trade requirements.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-blue-500/20 rounded-full flex items-center justify-center">
-                      <svg className="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-6 h-6 bg-brand-primary/20 rounded-full flex items-center justify-center">
+                      <svg className="w-3 h-3 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <span className="text-sm">Real-time compliance monitoring</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-blue-500/20 rounded-full flex items-center justify-center">
-                      <svg className="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-6 h-6 bg-brand-primary/20 rounded-full flex items-center justify-center">
+                      <svg className="w-3 h-3 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <span className="text-sm">Automated documentation generation</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-blue-500/20 rounded-full flex items-center justify-center">
-                      <svg className="w-3 h-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-6 h-6 bg-brand-primary/20 rounded-full flex items-center justify-center">
+                      <svg className="w-3 h-3 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -117,7 +117,7 @@ export default function Benefits() {
             <div className="mt-6 bg-gray-900/50 rounded-lg p-4 border border-gray-700">
               <div className="text-center">
                 <div className="text-sm text-gray-400 mb-2">Compliance Issues Prevented</div>
-                <div className="text-3xl font-bold text-blue-400">847</div>
+                <div className="text-3xl font-bold text-brand-primary">847</div>
                 <div className="text-xs text-gray-500">This quarter</div>
               </div>
             </div>
@@ -281,10 +281,10 @@ export default function Benefits() {
               Join leading exporters and traders who have increased their profitability by an average of 32% with FarmRoket™.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary-large">
+              <button className="btn btn-primary btn-lg px-8">
                 Start Free Trial
               </button>
-              <a href="https://outlook.office.com/bookwithme/user/48cc795072e74f5c997fec66dfc15db8@valiant.com.bd/meetingtype/dXqpDcIwYEqrf8q0lr6ijg2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" className="btn-secondary-large">
+              <a href="https://outlook.office.com/bookwithme/user/48cc795072e74f5c997fec66dfc15db8@valiant.com.bd/meetingtype/dXqpDcIwYEqrf8q0lr6ijg2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" className="btn btn-outline btn-lg px-8">
                 Schedule a Demo
               </a>
             </div>

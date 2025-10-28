@@ -41,10 +41,10 @@ export default function Hero() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-start mt-10 sm:mt-12 lg:mt-16">
-              <a href="https://outlook.office.com/bookwithme/user/48cc795072e74f5c997fec66dfc15db8@valiant.com.bd/meetingtype/dXqpDcIwYEqrf8q0lr6ijg2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" className="btn btn-primary btn-lg w-full sm:w-auto">
+              <a href="https://outlook.office.com/bookwithme/user/48cc795072e74f5c997fec66dfc15db8@valiant.com.bd/meetingtype/dXqpDcIwYEqrf8q0lr6ijg2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" className="btn btn-primary btn-lg px-8 w-full sm:w-auto">
                 Request a Demo
               </a>
-              <a href="#pilot-access" className="btn btn-outline btn-lg w-full sm:w-auto">
+              <a href="#pilot-access" className="btn btn-outline btn-lg px-8 w-full sm:w-auto">
                 Join Waitlist
               </a>
             </div>

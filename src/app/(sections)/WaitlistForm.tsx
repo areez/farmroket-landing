@@ -1,12 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
-import AuthModal from '@/components/AuthModal';
 
 export default function WaitlistForm() {
-  const { user } = useAuth();
-  const [showAuthModal, setShowAuthModal] = useState(false);
   
   const [formData, setFormData] = useState({
     companyName: '',
@@ -42,12 +38,6 @@ export default function WaitlistForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Check if user is authenticated
-    if (!user) {
-      setShowAuthModal(true);
-      return;
-    }
-    
     setIsSubmitting(true);
     setError(null);
     
@@ -57,10 +47,7 @@ export default function WaitlistForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          userId: user.id,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
@@ -508,16 +495,6 @@ export default function WaitlistForm() {
           </div>
         </div>
       </div>
-      
-      {/* Authentication Modal */}
-      <AuthModal 
-        isOpen={showAuthModal} 
-        onClose={() => setShowAuthModal(false)}
-        onSuccess={() => {
-          setShowAuthModal(false);
-          // Optionally refresh the form or show a success message
-        }}
-      />
     </section>
   );
 }

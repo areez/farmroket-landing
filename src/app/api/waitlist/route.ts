@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { Database, PilotApplicationInsert } from '@/types/database';
+import { EmailService, EmailNotificationData } from '@/lib/email';
 
 function isValidEmail(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -36,21 +37,20 @@ export async function POST(request: NextRequest) {
       currentChallenges, 
       interestedFeatures, 
       timeline, 
-      additionalInfo,
-      userId 
+      additionalInfo
     } = body;
 
     // Validate required fields
-    if (!companyName || !contactName || !email || !companySize || !timeline || !userId) {
+    if (!companyName || !contactName || !email || !companySize || !timeline) {
       return NextResponse.json(
-        { error: 'Missing required fields: companyName, contactName, email, companySize, timeline, and userId are required' },
+        { error: 'Missing required fields: companyName, contactName, email, companySize, and timeline are required' },
         { status: 400 }
       );
     }
 
     // Validate field types
     if (typeof companyName !== 'string' || typeof contactName !== 'string' || typeof email !== 'string' || 
-        typeof companySize !== 'string' || typeof timeline !== 'string' || typeof userId !== 'string') {
+        typeof companySize !== 'string' || typeof timeline !== 'string') {
       return NextResponse.json(
         { error: 'Invalid field types: string fields must be strings' },
         { status: 400 }
@@ -112,6 +112,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate phone number format if provided
+    if (phone && phone.trim()) {
+      const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+      if (!phoneRegex.test(phone.trim().replace(/[\s\-\(\)]/g, ''))) {
+        return NextResponse.json(
+          { error: 'Invalid phone number format' },
+          { status: 400 }
+        );
+      }
+    }
+
     // Check if email already exists in database
     const { data: existingApplication, error: checkError } = await supabaseAdmin
       .from('pilot_applications')
@@ -129,14 +140,38 @@ export async function POST(request: NextRequest) {
 
     if (existingApplication) {
       return NextResponse.json(
-        { error: 'Email already registered in waitlist' },
+        { error: 'This email has already been registered for pilot access. Each company can only submit one application.' },
         { status: 409 }
       );
     }
 
+    // Check if phone number already exists (if provided)
+    if (phone && phone.trim()) {
+      const { data: existingPhone, error: phoneCheckError } = await supabaseAdmin
+        .from('pilot_applications')
+        .select('id')
+        .eq('phone', phone.trim())
+        .single();
+
+      if (phoneCheckError && phoneCheckError.code !== 'PGRST116') {
+        console.error('Error checking existing phone:', phoneCheckError);
+        return NextResponse.json(
+          { error: 'Database error while checking phone number' },
+          { status: 500 }
+        );
+      }
+
+      if (existingPhone) {
+        return NextResponse.json(
+          { error: 'This phone number has already been registered for pilot access. Each company can only submit one application.' },
+          { status: 409 }
+        );
+      }
+    }
+
     // Create new pilot application
     const newApplication: PilotApplicationInsert = {
-      user_id: userId,
+      user_id: null, // Allow anonymous submissions
       company_name: companyName.trim(),
       contact_name: contactName.trim(),
       email: email.trim().toLowerCase(),
@@ -153,7 +188,7 @@ export async function POST(request: NextRequest) {
     const { data: insertedApplication, error: insertError } = await supabaseAdmin
       .from('pilot_applications')
       .insert(newApplication)
-      .select('id')
+      .select('id, created_at')
       .single();
 
     if (insertError) {
@@ -163,6 +198,33 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
+
+    // Send email notifications (don't block the response if emails fail)
+    const emailData: EmailNotificationData = {
+      companyName,
+      contactName,
+      email,
+      companySize,
+      timeline,
+      currentChallenges: currentChallenges || [],
+      interestedFeatures: interestedFeatures || [],
+      phone: phone || undefined,
+      submittedAt: insertedApplication.created_at
+    };
+
+    // Send notifications asynchronously
+    Promise.all([
+      EmailService.sendAdminNotification(emailData),
+      EmailService.sendApplicantConfirmation(emailData)
+    ]).then(([adminSent, applicantSent]) => {
+      console.log('Email notifications sent:', {
+        adminNotification: adminSent,
+        applicantConfirmation: applicantSent,
+        applicationId: insertedApplication.id
+      });
+    }).catch((error) => {
+      console.error('Error sending email notifications:', error);
+    });
 
     // Return success response
     return NextResponse.json(

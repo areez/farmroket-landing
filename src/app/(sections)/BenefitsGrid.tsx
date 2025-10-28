@@ -18,7 +18,7 @@ export default function BenefitsGrid() {
             <div className="card-body p-6 sm:p-8">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-avocado-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
@@ -134,7 +134,7 @@ export default function BenefitsGrid() {
                   <input type="radio" name="stakeholders-accordion" />
                   <div className="collapse-title text-base lg:text-lg font-medium flex items-center gap-2">
                      <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-accent/20 to-accent/5 rounded-md flex items-center justify-center flex-shrink-0 shadow-lg shadow-accent/20">
-                       <svg className="w-5 h-5 lg:w-6 lg:h-6 text-avocado-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <svg className="w-5 h-5 lg:w-6 lg:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 3H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" />
                         </svg>
                      </div>

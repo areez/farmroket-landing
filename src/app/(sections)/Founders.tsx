@@ -29,7 +29,7 @@ export default function Founders() {
                       </div>
                     </div>
                     <div className="text-center mt-2">
-                      <div className="badge badge-outline badge-sm">Founder</div>
+                      <div className="badge badge-outline border-avocado-green text-avocado-green badge-sm">Founder</div>
                     </div>
                   </div>
 
@@ -78,7 +78,7 @@ export default function Founders() {
                       </div>
                     </div>
                     <div className="text-center mt-2">
-                      <div className="badge badge-outline badge-sm">Co-founder</div>
+                      <div className="badge badge-outline border-avocado-green text-avocado-green badge-sm">Co-founder</div>
                     </div>
                   </div>
 
@@ -119,9 +119,9 @@ export default function Founders() {
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <div className="text-sm text-white border border-avocado-green bg-transparent px-3 py-1 rounded-full">Transparency First</div>
-                  <div className="text-sm text-white border border-avocado-green bg-transparent px-3 py-1 rounded-full">Compliance Ready</div>
-                  <div className="text-sm text-white border border-avocado-green bg-transparent px-3 py-1 rounded-full">Farmer Focused</div>
-                  <div className="text-sm text-white border border-avocado-green bg-transparent px-3 py-1 rounded-full">Globally Scalable</div>
+                <div className="text-sm text-white border border-avocado-green bg-transparent px-3 py-1 rounded-full">Compliance Ready</div>
+                <div className="text-sm text-white border border-avocado-green bg-transparent px-3 py-1 rounded-full">Farmer Focused</div>
+                <div className="text-sm text-white border border-avocado-green bg-transparent px-3 py-1 rounded-full">Globally Scalable</div>
                 </div>
               </div>
             </div>

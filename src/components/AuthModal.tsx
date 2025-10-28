@@ -10,14 +10,12 @@ interface AuthModalProps {
 }
 
 export default function AuthModal({ isOpen, onClose, onSuccess }: AuthModalProps) {
-  const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [fullName, setFullName] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const { signUp, signIn } = useAuth();
+  const { signIn } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,22 +23,13 @@ export default function AuthModal({ isOpen, onClose, onSuccess }: AuthModalProps
     setError('');
 
     try {
-      let result;
-      if (isSignUp) {
-        result = await signUp(email, password, fullName);
-      } else {
-        result = await signIn(email, password);
-      }
+      const result = await signIn(email, password);
 
       if (result.error) {
         setError(result.error.message);
       } else {
-        if (isSignUp) {
-          setError('Please check your email to confirm your account before proceeding.');
-        } else {
-          onSuccess();
-          onClose();
-        }
+        onSuccess();
+        onClose();
       }
     } catch {
       setError('An unexpected error occurred');
@@ -52,7 +41,6 @@ export default function AuthModal({ isOpen, onClose, onSuccess }: AuthModalProps
   const resetForm = () => {
     setEmail('');
     setPassword('');
-    setFullName('');
     setError('');
     setLoading(false);
   };
@@ -62,10 +50,7 @@ export default function AuthModal({ isOpen, onClose, onSuccess }: AuthModalProps
     onClose();
   };
 
-  const toggleMode = () => {
-    setIsSignUp(!isSignUp);
-    setError('');
-  };
+
 
   if (!isOpen) return null;
 
@@ -74,33 +59,17 @@ export default function AuthModal({ isOpen, onClose, onSuccess }: AuthModalProps
       <div className="bg-nile-800 border border-nile-700 rounded-xl max-w-md w-full p-6 shadow-2xl">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-white">
-            {isSignUp ? 'Create Account' : 'Sign In'}
+            Sign In
           </h2>
           <button
             onClick={handleClose}
-            className="text-gray-400 hover:text-white transition-colors text-2xl"
+            className="btn btn-ghost btn-circle text-2xl"
           >
             ×
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {isSignUp && (
-            <div>
-              <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-1">
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="fullName"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                required={isSignUp}
-                className="w-full px-3 py-2 bg-nile-700 border border-nile-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-avocado-400 focus:border-avocado-400 placeholder-gray-400 transition-colors"
-                placeholder="Enter your full name"
-              />
-            </div>
-          )}
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
@@ -142,23 +111,13 @@ export default function AuthModal({ isOpen, onClose, onSuccess }: AuthModalProps
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-avocado-400 text-nile-900 py-2 px-4 rounded-md hover:bg-avocado-300 focus:outline-none focus:ring-2 focus:ring-avocado-400 focus:ring-offset-2 focus:ring-offset-nile-800 disabled:opacity-50 disabled:cursor-not-allowed font-medium transition-colors"
+            className={`btn btn-primary btn-lg px-8 w-full ${loading ? 'loading' : ''}`}
           >
-            {loading ? 'Processing...' : (isSignUp ? 'Create Account' : 'Sign In')}
+            {loading ? 'Processing...' : 'Sign In'}
           </button>
         </form>
 
-        <div className="mt-6 text-center">
-          <button
-            onClick={toggleMode}
-            className="text-avocado-400 hover:text-avocado-300 text-sm transition-colors"
-          >
-            {isSignUp 
-              ? 'Already have an account? Sign in' 
-              : "Don't have an account? Create one"
-            }
-          </button>
-        </div>
+
       </div>
     </div>
   );

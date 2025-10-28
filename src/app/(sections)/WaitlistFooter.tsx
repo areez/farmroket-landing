@@ -55,7 +55,7 @@ export default function WaitlistFooter() {
                 Get Pilot Access
               </h2>
               <p className="text-body-lg text-gray-100 mb-4 max-w-2xl mx-auto">
-                Be among the first to experience the future of food traceability. 
+                Be among the first to experience the future of food traceability.
                 Get early access and exclusive updates on our platform launch.
               </p>
               <p className="text-avocado-green font-semibold text-base mb-6">
@@ -90,7 +90,7 @@ export default function WaitlistFooter() {
                         />
                       </div>
                     </div>
-                    
+
                     <div className="form-control">
                       <input
                         type="text"
@@ -102,11 +102,11 @@ export default function WaitlistFooter() {
                         required
                       />
                     </div>
-                    
+
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`btn btn-primary btn-lg w-full ${isSubmitting ? 'loading' : ''}`}
+                      className={`btn btn-primary btn-lg px-8 w-full ${isSubmitting ? 'loading' : ''}`}
                     >
                       {isSubmitting ? 'Joining...' : (
                         <>
@@ -117,7 +117,7 @@ export default function WaitlistFooter() {
                         </>
                       )}
                     </button>
-                    
+
                     <p className="text-xs text-base-content/60 text-center">
                       We&apos;ll only email about pilot and product updates.
                     </p>
@@ -155,7 +155,7 @@ export default function WaitlistFooter() {
                   <div className="stat-value text-primary">$176B</div>
                   <div className="stat-desc">2024 total value <a href="https://www.ers.usda.gov/topics/international-markets-us-trade/us-agricultural-trade/us-agricultural-trade-at-a-glance" target="_blank" rel="noopener noreferrer" className="link link-primary text-xs">↗</a></div>
                 </div>
-                
+
                 <div className="stat">
                   <div className="stat-figure text-secondary">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -166,7 +166,7 @@ export default function WaitlistFooter() {
                   <div className="stat-value text-secondary">$1.53T</div>
                   <div className="stat-desc">US food sectors 2024 <a href="https://www.ers.usda.gov/topics/international-markets-us-trade/us-agricultural-trade/us-agricultural-trade-at-a-glance" target="_blank" rel="noopener noreferrer" className="link link-primary text-xs">↗</a></div>
                 </div>
-                
+
                 <div className="stat">
                   <div className="stat-figure text-accent">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -177,7 +177,7 @@ export default function WaitlistFooter() {
                   <div className="stat-value text-accent">36.2%</div>
                   <div className="stat-desc">CAGR 2024-2032 <a href="https://www.gminsights.com/industry-analysis/blockchain-in-agriculture-and-food-supply-chain-market" target="_blank" rel="noopener noreferrer" className="link link-primary text-xs">↗</a></div>
                 </div>
-                
+
                 <div className="stat">
                   <div className="stat-figure text-info">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -205,7 +205,7 @@ export default function WaitlistFooter() {
             <span className="text-2xl font-bold">FarmRoket™</span>
           </div>
         </div>
-        
+
         <div className="grid grid-flow-col gap-4">
           <a className="link link-hover" href="#features">Features</a>
           <a className="link link-hover" href="#compliance">Compliance</a>
@@ -213,7 +213,7 @@ export default function WaitlistFooter() {
           <a className="link link-hover" href="#about">About</a>
           <a className="link link-hover" href="#contact">Contact</a>
         </div>
-        
+
         <div>
           <div className="grid grid-flow-col gap-4">
             <a className="link" href="#" aria-label="Twitter">
@@ -233,7 +233,7 @@ export default function WaitlistFooter() {
             </a>
           </div>
         </div>
-        
+
         <div className="text-center">
           <p className="text-base-content/70">
             Revolutionizing food export compliance through blockchain technology.
@@ -242,7 +242,7 @@ export default function WaitlistFooter() {
             © {new Date().getFullYear()} FarmRoket™. All rights reserved.
           </p>
         </div>
-        
+
         <div className="flex flex-wrap justify-center gap-4 text-sm">
           <a href="#privacy" className="link link-hover">Privacy Policy</a>
           <a href="#terms" className="link link-hover">Terms of Service</a>

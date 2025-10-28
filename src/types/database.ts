@@ -45,6 +45,7 @@ export interface Database {
           additional_info: string | null
           status: 'pending' | 'approved' | 'rejected' | 'in_review'
           admin_notes: string | null
+          is_active: boolean
           created_at: string
           updated_at: string
         }
@@ -62,6 +63,7 @@ export interface Database {
           additional_info?: string | null
           status?: 'pending' | 'approved' | 'rejected' | 'in_review'
           admin_notes?: string | null
+          is_active?: boolean
           created_at?: string
           updated_at?: string
         }
@@ -79,6 +81,7 @@ export interface Database {
           additional_info?: string | null
           status?: 'pending' | 'approved' | 'rejected' | 'in_review'
           admin_notes?: string | null
+          is_active?: boolean
           created_at?: string
           updated_at?: string
         }

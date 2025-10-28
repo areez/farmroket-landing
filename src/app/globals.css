@@ -422,3 +422,447 @@ body {
 .steps .step::after {
   border-width: 1px !important;
 }
+
+/* ========================================
+   UNIFIED COLOR SYSTEM - HOMEPAGE THEME
+   ======================================== */
+
+/* 
+  This section provides a unified color system based on the homepage's perfect theme.
+  Use these classes throughout the application for consistency.
+*/
+
+@layer utilities {
+  /* Primary Brand Colors - Avocado Green */
+  .text-brand-primary { color: var(--avocado-green); }
+  .bg-brand-primary { background-color: var(--avocado-green); }
+  .border-brand-primary { border-color: var(--avocado-green); }
+  .ring-brand-primary { --tw-ring-color: var(--avocado-green); }
+  
+  /* Secondary Brand Colors - Farm Green */
+  .text-brand-secondary { color: #55883d; }
+  .bg-brand-secondary { background-color: #55883d; }
+  .border-brand-secondary { border-color: #55883d; }
+  .ring-brand-secondary { --tw-ring-color: #55883d; }
+  
+  /* Brand Hover States */
+  .hover\:text-brand-primary:hover { color: var(--primary-green-hover); }
+  .hover\:bg-brand-primary:hover { background-color: var(--primary-green-hover); }
+  .hover\:border-brand-primary:hover { border-color: var(--primary-green-hover); }
+  
+  /* Focus States for Forms */
+  .focus\:ring-brand-primary:focus { 
+    --tw-ring-color: var(--avocado-green);
+    --tw-ring-opacity: 0.5;
+  }
+  .focus\:border-brand-primary:focus { border-color: var(--avocado-green); }
+  
+  /* ===== UNIFIED BUTTON SYSTEM ===== */
+  /* Base button styles with consistent sizing, animation, and effects */
+  
+  /* Primary Buttons - Standard Size (matches reference buttons) */
+  .btn-brand-primary {
+    background-color: var(--avocado-green);
+    color: #1f2937;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    min-height: 48px;
+    letter-spacing: 0.025em;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-brand-primary:hover {
+    background-color: #55883d;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .btn-brand-primary:active {
+    transform: translateY(0);
+  }
+  
+  .btn-brand-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Large Primary Buttons - Same as standard (unified sizing) */
+  .btn-brand-primary-lg {
+    background-color: var(--avocado-green);
+    color: #1f2937;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    min-height: 48px;
+    letter-spacing: 0.025em;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-brand-primary-lg:hover {
+    background-color: #55883d;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .btn-brand-primary-lg:active {
+    transform: translateY(0);
+  }
+  
+  .btn-brand-primary-lg:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Small Primary Buttons */
+  .btn-brand-primary-sm {
+    background-color: var(--avocado-green);
+    color: #1f2937;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    min-height: 36px;
+    letter-spacing: 0.025em;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-brand-primary-sm:hover {
+    background-color: #55883d;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .btn-brand-primary-sm:active {
+    transform: translateY(0);
+  }
+  
+  .btn-brand-primary-sm:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Outline Buttons - Standard Size (matches reference buttons) */
+  .btn-brand-outline {
+    background-color: transparent;
+    border: 2px solid var(--avocado-green);
+    color: var(--avocado-green);
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    min-height: 48px;
+    letter-spacing: 0.025em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-brand-outline:hover {
+    background-color: var(--avocado-green);
+    color: #1f2937;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .btn-brand-outline:active {
+    transform: translateY(0);
+  }
+  
+  .btn-brand-outline:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Large Outline Buttons - Same as standard (unified sizing) */
+  .btn-brand-outline-lg {
+    background-color: transparent;
+    border: 2px solid var(--avocado-green);
+    color: var(--avocado-green);
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    min-height: 48px;
+    letter-spacing: 0.025em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-brand-outline-lg:hover {
+    background-color: var(--avocado-green);
+    color: #1f2937;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .btn-brand-outline-lg:active {
+    transform: translateY(0);
+  }
+  
+  .btn-brand-outline-lg:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Small Outline Buttons */
+  .btn-brand-outline-sm {
+    background-color: transparent;
+    border: 2px solid var(--avocado-green);
+    color: var(--avocado-green);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    min-height: 36px;
+    letter-spacing: 0.025em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-brand-outline-sm:hover {
+    background-color: var(--avocado-green);
+    color: #1f2937;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .btn-brand-outline-sm:active {
+    transform: translateY(0);
+  }
+  
+  .btn-brand-outline-sm:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Ghost Buttons */
+  .btn-brand-ghost {
+    background-color: transparent;
+    color: var(--avocado-green);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    min-height: 40px;
+    letter-spacing: 0.025em;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-brand-ghost:hover {
+    background-color: rgba(139, 195, 74, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .btn-brand-ghost:active {
+    transform: translateY(0);
+  }
+  
+  .btn-brand-ghost:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Icon Buttons */
+  .btn-brand-icon {
+    background-color: transparent;
+    color: #94a3b8;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-brand-icon:hover {
+    color: var(--avocado-green);
+    background-color: rgba(139, 195, 74, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .btn-brand-icon:active {
+    transform: translateY(0);
+  }
+  
+  .btn-brand-icon:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Loading state for buttons */
+  .btn-loading {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Badge System */
+  .badge-brand {
+    background-color: var(--avocado-green);
+    color: #1f2937;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .badge-brand-outline {
+    background-color: transparent;
+    border: 1px solid var(--avocado-green);
+    color: var(--avocado-green);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  /* Form Input System */
+  .input-brand {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #4b5563;
+    border-radius: 0.5rem;
+    background-color: rgba(31, 41, 55, 0.5);
+    color: white;
+    transition: border-color 0.2s ease;
+  }
+  
+  .input-brand::placeholder {
+    color: #9ca3af;
+  }
+  
+  .input-brand:focus {
+    outline: none;
+    border-color: var(--avocado-green);
+    box-shadow: 0 0 0 2px rgba(139, 195, 74, 0.2);
+  }
+  
+  /* Loading Spinner System */
+  .spinner-brand {
+    animation: spin 1s linear infinite;
+    border-radius: 50%;
+    border-bottom: 2px solid var(--avocado-green);
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Icon System */
+  .icon-brand {
+    color: var(--avocado-green);
+    transition: color 0.2s ease;
+  }
+  
+  .icon-brand-hover {
+    color: #9ca3af;
+    transition: color 0.2s ease;
+  }
+  
+  .icon-brand-hover:hover {
+    color: var(--avocado-green);
+  }
+  
+  /* Card System with Brand Accents */
+  .card-brand {
+    background-color: rgba(31, 41, 55, 0.5);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .card-brand:hover {
+    background-color: rgba(31, 41, 55, 0.7);
+    border-color: rgba(139, 195, 74, 0.3);
+    box-shadow: 0 10px 15px -3px rgba(139, 195, 74, 0.1);
+  }
+  
+  /* Text Hierarchy with Brand Colors */
+  .heading-brand {
+    color: var(--avocado-green);
+    font-weight: 700;
+  }
+  
+  .subheading-brand {
+    color: rgba(139, 195, 74, 0.8);
+    font-weight: 600;
+  }
+  
+  .accent-brand {
+    color: var(--avocado-green);
+    font-weight: 500;
+  }
+}

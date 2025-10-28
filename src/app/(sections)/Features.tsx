@@ -61,7 +61,7 @@ export default function Features() {
                   <div className="text-xs text-gray-400">Monthly Revenue</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-bold text-blue-400">23</div>
+                  <div className="text-lg font-bold text-brand-primary">23</div>
                   <div className="text-xs text-gray-400">Countries</div>
                 </div>
               </div>
@@ -202,7 +202,7 @@ export default function Features() {
                 </div>
                 <div>
                   <div className="text-sm font-medium text-white mb-1">Market Demand</div>
-                  <div className="text-lg font-bold text-blue-400">High</div>
+                  <div className="text-lg font-bold text-brand-primary">High</div>
                   <div className="text-xs text-gray-400">EU & US markets</div>
                 </div>
               </div>
@@ -218,10 +218,10 @@ export default function Features() {
               Join leading exporters and traders who trust FarmRoket™ to streamline their operations and maximize profitability.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary-large">
+              <button className="btn btn-primary btn-lg px-8">
                 Start Free Trial
               </button>
-              <a href="https://outlook.office.com/bookwithme/user/48cc795072e74f5c997fec66dfc15db8@valiant.com.bd/meetingtype/dXqpDcIwYEqrf8q0lr6ijg2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" className="btn-secondary-large">
+              <a href="https://outlook.office.com/bookwithme/user/48cc795072e74f5c997fec66dfc15db8@valiant.com.bd/meetingtype/dXqpDcIwYEqrf8q0lr6ijg2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" className="btn btn-outline btn-lg px-8">
                 Schedule a Demo
               </a>
             </div>

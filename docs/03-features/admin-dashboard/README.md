@@ -16,15 +16,16 @@ This guide provides step-by-step instructions for accessing submitted data, logg
 ### Method 1: Direct Browser Access
 
 1. **Open your browser**
-2. **Navigate to**: `http://localhost:3000/admin`
-3. **You will see**: Authentication required page
-4. **Action**: You'll be redirected to login
+2. **Navigate to**: `http://localhost:3000/admin/dashboard`
+3. **You will see**: Loading state followed by authentication check
+4. **Action**: You'll be redirected to homepage with sign-in modal if not authenticated
 
 ### Method 2: From Main Site
 
 1. **Go to**: `http://localhost:3000`
-2. **Add `/admin`** to the URL
-3. **Press Enter**
+2. **Click the user icon** in the navbar (if signed in)
+3. **Select "Dashboard"** from the dropdown menu
+4. **Or manually add `/admin/dashboard`** to the URL
 
 ## 🔑 Step 2: Authentication Options
 
@@ -209,9 +210,10 @@ The system currently has 5 test applications:
 
 ## 🚪 Step 8: Logout
 
-1. **Click your email** in the top right corner
-2. **Select "Sign Out"** from dropdown
-3. **You'll be redirected** to the main site
+1. **Click the user icon** in the top right corner of the navbar
+2. **Select "Sign Out"** from the dropdown menu
+3. **You'll be redirected** to the homepage
+4. **Session is completely cleared** and sign-in button replaces user icon
 
 ## 🔍 Troubleshooting
 
@@ -238,24 +240,50 @@ The system currently has 5 test applications:
 
 ## 📞 Quick Reference
 
-| Action             | URL/Method                       |
-| ------------------ | -------------------------------- |
-| Admin Dashboard    | `http://localhost:3000/admin`    |
-| Main Site          | `http://localhost:3000`          |
-| Statistics API     | `GET /api/waitlist`              |
-| Admin API          | `GET /api/admin/applications`    |
-| Supabase Dashboard | `https://supabase.com/dashboard` |
+| Action             | URL/Method                              |
+| ------------------ | --------------------------------------- |
+| Admin Dashboard    | `http://localhost:3000/admin/dashboard` |
+| Admin Profile      | `http://localhost:3000/admin/profile`   |
+| Main Site          | `http://localhost:3000`                 |
+| Statistics API     | `GET /api/waitlist`                     |
+| Admin API          | `GET /api/admin/applications`           |
+| Supabase Dashboard | `https://supabase.com/dashboard`        |
+
+## 🆕 Recent Improvements
+
+### Enhanced Authentication Flow
+
+- **Loading State Protection**: Dashboard now shows loading state during authentication check
+- **Secure Redirects**: Unauthorized users are redirected to homepage instead of broken login pages
+- **Browser Back Button Protection**: Prevents brief glimpses of dashboard content for logged-out users
+- **Improved Error Handling**: Better error messages and user feedback
+
+### UI/UX Improvements
+
+- **User Icon Navigation**: Replaced email display with consistent user icon in navbar
+- **Dropdown Menu**: Enhanced dropdown design with clear navigation options
+- **Visual Consistency**: Improved spacing and visual hierarchy throughout the interface
+- **Responsive Design**: Better mobile and desktop experience
+
+### Security Enhancements
+
+- **Complete Session Cleanup**: Enhanced sign-out process ensures all session data is cleared
+- **Authentication Guards**: Improved protection for admin routes
+- **State Management**: Better handling of authentication states and transitions
 
 ## 🎉 Success Checklist
 
-- [ ] Can access `http://localhost:3000/admin`
-- [ ] Can login with credentials
-- [ ] User has admin role set
-- [ ] Can see application statistics
-- [ ] Can view application table
-- [ ] Can filter applications
-- [ ] Can update application status
-- [ ] Can logout successfully
+- [ ] Can access `http://localhost:3000/admin/dashboard`
+- [ ] Can login with credentials via sign-in modal
+- [ ] User has admin role set in Supabase
+- [ ] Can see application statistics on dashboard
+- [ ] Can view application table with proper data
+- [ ] Can filter applications by status
+- [ ] Can update application status via dropdown
+- [ ] Can access admin profile at `/admin/profile`
+- [ ] Can logout successfully via user icon dropdown
+- [ ] Redirected to homepage after logout
+- [ ] No unauthorized access to protected routes
 
 ---
 
