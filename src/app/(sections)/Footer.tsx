@@ -170,8 +170,8 @@ export default function Footer() {
             <div className="text-xs text-base-content/60 leading-relaxed px-4">
               <p>
                 Questions? Write to us at{' '}
-                <a href="mailto:contact@farmrocket.com" className="link link-primary font-medium hover:underline transition-all break-all">
-                  contact@farmrocket.com
+                <a href="mailto:contact@farmroket.com" className="link link-primary font-medium hover:underline transition-all break-all">
+                  contact@farmroket.com
                 </a>
               </p>
             </div>

@@ -1,303 +1,200 @@
-# FarmRoket Landing Page Documentation
+# 📚 Farmroket Documentation
 
-## 📋 Table of Contents
+Welcome to the comprehensive documentation for Farmroket! This documentation is organized to help you quickly find the information you need, whether you're getting started, developing features, or maintaining the system.
 
-- [Project Overview](#project-overview)
-- [Quick Start](#quick-start)
-- [Development Workflow](#development-workflow)
-- [Architecture](#architecture)
-- [Components](#components)
-- [API Reference](#api-reference)
-- [Deployment](#deployment)
-- [Version Management](#version-management)
-- [Contributing](#contributing)
+## 🗂️ Documentation Structure
 
-## 🌾 Project Overview
+Our documentation follows a structured approach designed for scalability and ease of navigation:
 
-**FarmRoket** is a revolutionary blockchain-powered platform that ensures complete transparency and traceability from farm to fork. This landing page serves as the primary marketing and lead generation tool for the platform.
+### 🚀 [01-getting-started/](./01-getting-started/)
 
-### Key Features
+Everything you need to get Farmroket up and running quickly.
 
-- **Modern Design**: Built with TailwindCSS v4 and DaisyUI for a professional, responsive interface
-- **Performance Optimized**: Next.js 15.5.3 with Turbopack for lightning-fast development and production builds
-- **SEO Ready**: Comprehensive meta tags, Open Graph, and Twitter Card integration
-- **Lead Generation**: Integrated waitlist system with API backend
-- **Accessibility**: WCAG compliant with semantic HTML and ARIA labels
+- **[Quick Start Guide](./01-getting-started/README.md)** - Get up and running in minutes
+- **[Installation](./01-getting-started/installation.md)** - Detailed setup instructions
+- **[Admin Setup](./01-getting-started/admin-setup.md)** - Create your first admin user
 
-### Technology Stack
+### 🏗️ [02-architecture/](./02-architecture/)
 
-| Technology  | Version | Purpose                         |
-| ----------- | ------- | ------------------------------- |
-| Next.js     | 15.5.3  | React framework with App Router |
-| React       | 19.0.0  | UI library                      |
-| TypeScript  | 5.0+    | Type safety                     |
-| TailwindCSS | 4.0+    | Utility-first CSS framework     |
-| DaisyUI     | 5.1.13  | Component library               |
-| Turbopack   | Latest  | Fast bundler for development    |
+Technical architecture, design decisions, and system overview.
 
-## 🚀 Quick Start
+- **[System Architecture](./02-architecture/README.md)** - High-level architecture overview
+- **[Database Schema](./02-architecture/database-schema.md)** - Supabase integration and database design
 
-### Prerequisites
+### ✨ [03-features/](./03-features/)
 
-- Node.js 18.0 or higher
-- npm or yarn package manager
-- Git for version control
+Detailed documentation for all features, both implemented and planned.
 
-### Installation
+- **[Features Overview](./03-features/README.md)** - Complete feature catalog
+- **[Authentication](./03-features/authentication/README.md)** - User authentication system
+- **[Admin Dashboard](./03-features/admin-dashboard/README.md)** - Administrative interface
+- **[Pilot Applications](./03-features/pilot-applications/README.md)** - Application management system
 
-1. **Clone the repository**
+### 🔌 [04-api/](./04-api/)
 
-   ```bash
-   git clone <repository-url>
-   cd farmroket-landing
-   ```
+Complete API reference with examples and testing guides.
 
-2. **Install dependencies**
+- **[API Documentation](./04-api/README.md)** - Comprehensive API reference
 
-   ```bash
-   npm install
-   ```
+### 💻 [05-development/](./05-development/)
 
-3. **Start development server**
+Development workflow, coding standards, and contributor guidelines.
 
-   ```bash
-   npm run dev
-   ```
+- **[Development Guide](./05-development/README.md)** - Development workflow and best practices
+- **[Standard Operating Procedure (SOP)](./05-development/SOP.md)** - ⭐ **Complete step-by-step development workflow**
+- **[SOP Checklists](./05-development/sop-checklists.md)** - Task-specific quick reference checklists
 
-4. **Open in browser**
-   Navigate to `http://localhost:3000`
+### 🚀 [06-deployment/](./06-deployment/)
 
-### Available Scripts
+Production deployment guides and configuration.
 
-```bash
-# Development server with Turbopack
-npm run dev
+- **[Deployment Guide](./06-deployment/README.md)** - Production deployment instructions
 
-# Production build
-npm run build
+### 📋 [07-sprints/](./07-sprints/)
 
-# Start production server
-npm start
+Sprint-based development tracking and project management.
 
-# Lint code
-npm run lint
+- **[Sprint Overview](./07-sprints/README.md)** - Sprint methodology and tracking
+- **[Sprint 01 - MVP](./07-sprints/sprint-01-mvp/README.md)** - Current MVP development
 
-# Interactive commit (recommended)
-npm run commit
+### 🔧 [08-maintenance/](./08-maintenance/)
 
-# Generate changelog
-npm run changelog
+Troubleshooting guides, maintenance procedures, and operational documentation.
 
-# Version bump (automated in CI)
-npm run version
+- **Templates** - Maintenance task templates
 
-# Run pre-commit checks
-npm run lint-staged
-```
+### 📖 [09-reference/](./09-reference/)
 
-## 🔄 Development Workflow
+Reference materials, templates, and additional resources.
 
-This project follows modern development best practices with automated workflows:
+- **Templates** - Documentation templates for future development
 
-### **Commit Standards**
-
-We use [Conventional Commits](https://www.conventionalcommits.org/) for consistent commit messages:
-
-```bash
-# Interactive commit (recommended)
-npm run commit
+## 🎯 Quick Navigation
 
-# Manual conventional commit
-git commit -m "feat: add new landing section"
-git commit -m "fix: resolve mobile responsive issue"
-git commit -m "docs: update API documentation"
-```
+### For New Developers
 
-### **Automated Quality Checks**
+1. Start with [Getting Started](./01-getting-started/README.md)
+2. Review [System Architecture](./02-architecture/README.md)
+3. Explore [Features](./03-features/README.md)
+4. Set up [Development Environment](./05-development/README.md)
 
-- **Pre-commit hooks**: Automatic code formatting and linting
-- **Commit message validation**: Ensures conventional commit format
-- **CI pipeline**: Automated testing and security audits
-- **Automated releases**: Version bumping and changelog generation
+### For Feature Development
 
-### **Version Management**
+1. Check [Features Overview](./03-features/README.md) for existing features
+2. Use [Feature Templates](./03-features/_templates/) for new features
+3. Review [API Documentation](./04-api/README.md) for integration
+4. Follow [Sprint Process](./07-sprints/README.md) for planning
 
-- `feat:` commits → Minor version bump (1.0.0 → 1.1.0)
-- `fix:` commits → Patch version bump (1.0.0 → 1.0.1)
-- `feat!:` or `BREAKING CHANGE:` → Major version bump (1.0.0 → 2.0.0)
+### For System Administration
 
-### **Development Tools**
+1. Review [Admin Setup](./01-getting-started/admin-setup.md)
+2. Check [Deployment Guide](./06-deployment/README.md)
+3. Use [Maintenance Templates](./08-maintenance/_templates/) for issues
+4. Monitor [Sprint Progress](./07-sprints/README.md)
 
-- **ESLint**: Code linting and error detection
-- **Prettier**: Automatic code formatting
-- **Husky**: Git hooks for quality assurance
-- **Commitizen**: Interactive commit message creation
-- **Conventional Changelog**: Automated changelog generation
+### For API Integration
 
-For detailed development guidelines, see [Development Documentation](./DEVELOPMENT.md).
+1. Start with [API Documentation](./04-api/README.md)
+2. Review [Authentication](./03-features/authentication/README.md)
+3. Check [Database Schema](./02-architecture/database-schema.md)
+4. Use [API Templates](./04-api/_templates/) for new endpoints
 
-## 🏗️ Architecture
+## 📊 Documentation Metrics
 
-### Project Structure
+### Current Status
 
-```
-farmroket-landing/
-├── src/
-│   ├── app/
-│   │   ├── (sections)/          # Landing page sections
-│   │   │   ├── Hero.tsx
-│   │   │   ├── ProblemSolution.tsx
-│   │   │   ├── HowItWorks.tsx
-│   │   │   ├── Features.tsx
-│   │   │   ├── Benefits.tsx
-│   │   │   ├── UseCasesAbout.tsx
-│   │   │   └── WaitlistFooter.tsx
-│   │   ├── api/
-│   │   │   └── waitlist/
-│   │   │       └── route.ts     # Waitlist API endpoint
-│   │   ├── globals.css          # Global styles
-│   │   ├── layout.tsx           # Root layout with SEO
-│   │   └── page.tsx             # Main page component
-│   └── components/
-│       └── ui/                  # Reusable UI components
-├── data/
-│   └── waitlist.json           # Waitlist data storage
-├── docs/                       # Documentation
-├── public/                     # Static assets
-├── tailwind.config.js          # Tailwind configuration
-└── package.json               # Dependencies and scripts
-```
+- **Total Documentation Files**: 25+
+- **Coverage**: All major features documented
+- **Last Updated**: Sprint 01 - MVP completion
+- **Maintenance**: Active and up-to-date
 
-### Design Patterns
+### Documentation Standards
 
-- **Component-Based Architecture**: Each section is a self-contained React component
-- **Server Components**: Leveraging Next.js App Router for optimal performance
-- **API Routes**: RESTful endpoints for data operations
-- **Responsive Design**: Mobile-first approach with Tailwind breakpoints
-- **Type Safety**: Full TypeScript integration for better developer experience
+- **Format**: Markdown with consistent structure
+- **Templates**: Available for all document types
+- **Cross-references**: Comprehensive linking between sections
+- **Examples**: Code examples and practical guides included
 
-## 📱 Components
+## 🔄 Documentation Workflow
 
-The landing page is composed of modular sections, each serving a specific purpose:
+### For Contributors
 
-### Section Components
+1. **Planning**: Use templates from respective `_templates/` directories
+2. **Writing**: Follow existing documentation patterns
+3. **Review**: Ensure cross-references are updated
+4. **Maintenance**: Update related documentation when making changes
 
-1. **Hero** - Primary value proposition and CTA
-2. **ProblemSolution** - Problem identification and solution presentation
-3. **HowItWorks** - Process explanation with visual timeline
-4. **Features** - Key platform capabilities
-5. **Benefits** - User-specific value propositions
-6. **UseCasesAbout** - Regulatory use cases and company information
-7. **WaitlistFooter** - Lead capture and footer information
+### For Maintainers
 
-### Component Guidelines
+1. **Sprint Updates**: Update sprint documentation after each sprint
+2. **Feature Documentation**: Ensure new features are documented
+3. **API Changes**: Update API documentation for any endpoint changes
+4. **Architecture Updates**: Reflect system changes in architecture docs
 
-- Each component is fully self-contained
-- Props are typed with TypeScript interfaces
-- Responsive design using Tailwind breakpoints
-- Accessibility features included (ARIA labels, semantic HTML)
-- Consistent spacing using Tailwind spacing scale
+## 🛠️ Documentation Tools
 
-For detailed component documentation, see [Components Documentation](./components/README.md).
+### Templates Available
 
-## 🔌 API Reference
+- **[Feature Template](./03-features/_templates/feature-template.md)** - For new feature documentation
+- **[API Endpoint Template](./04-api/_templates/endpoint-template.md)** - For new API endpoints
+- **[Sprint Template](./07-sprints/_templates/sprint-template/README.md)** - For sprint planning
+- **[Maintenance Template](./08-maintenance/_templates/maintenance-template.md)** - For maintenance tasks
 
-The application includes a RESTful API for waitlist management:
+### Documentation Guidelines
 
-### Endpoints
+- Use clear, descriptive headings
+- Include code examples where applicable
+- Maintain consistent formatting
+- Update cross-references when moving content
+- Include relevant emojis for visual navigation
 
-- `POST /api/waitlist` - Submit waitlist entry
-- `GET /api/waitlist` - Get waitlist summary (admin)
+## 🔗 External Resources
 
-For complete API documentation, see [API Documentation](./api/README.md).
+### Technology Documentation
 
-## 🚀 Deployment
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Supabase Documentation](https://supabase.com/docs)
+- [TailwindCSS Documentation](https://tailwindcss.com/docs)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs)
 
-The application is optimized for deployment on Vercel but can be deployed to any platform supporting Next.js.
+### Development Resources
 
-### Vercel Deployment (Recommended)
-
-1. Connect your GitHub repository to Vercel
-2. Configure environment variables (if any)
-3. Deploy with automatic builds on push
-
-### Other Platforms
-
-- **Netlify**: Use `npm run build` and deploy the `out` folder
-- **AWS**: Deploy using AWS Amplify or EC2
-- **Docker**: Containerize using the included Dockerfile
-
-For detailed deployment instructions, see [Deployment Documentation](./deployment/README.md).
-
-## 📦 Version Management
-
-### **Automated Versioning**
-
-Versions are automatically managed based on commit types:
-
-- **Semantic Versioning**: Following [semver](https://semver.org/) standards
-- **Automated Changelog**: Generated from conventional commits
-- **GitHub Releases**: Automatically created with release notes
-- **CI/CD Integration**: Seamless deployment pipeline
-
-### **Release Process**
-
-1. **Development**: Make changes using conventional commits
-2. **Pull Request**: Automated CI checks and validation
-3. **Merge**: Automatic version detection and changelog update
-4. **Release**: GitHub release creation and deployment
-
-### **Current Version**
-
-Check the latest version in [CHANGELOG.md](../CHANGELOG.md) or [package.json](../package.json).
-
-## 🤝 Contributing
-
-### **Development Workflow**
-
-1. **Fork and Clone**: Create your own fork of the repository
-2. **Branch**: Create a feature branch (`git checkout -b feat/amazing-feature`)
-3. **Develop**: Make changes following our coding standards
-4. **Commit**: Use conventional commits (`npm run commit`)
-5. **Test**: Ensure all checks pass locally
-6. **Pull Request**: Submit with detailed description
-7. **Review**: Address feedback and ensure CI passes
-8. **Merge**: Automatic deployment after approval
-
-### **Coding Standards**
-
-- **TypeScript**: Use TypeScript for all new code
-- **Component Structure**: Follow existing patterns
-- **Styling**: Use Tailwind CSS classes
-- **Type Safety**: Include proper TypeScript interfaces
-- **Documentation**: Add comments for complex logic
-- **Accessibility**: Ensure WCAG compliance
-- **Conventional Commits**: Use standardized commit messages
-
-### **Quality Assurance**
-
-- **Automated Formatting**: Pre-commit hooks handle code style
-- **Linting**: ESLint catches potential issues
-- **Type Checking**: TypeScript ensures type safety
-- **CI Pipeline**: Automated testing and security audits
-- **Manual Testing**: Cross-browser and device testing
-
-### **Getting Help**
-
-- **Development Guide**: See [DEVELOPMENT.md](./DEVELOPMENT.md) for detailed workflow
-- **Component Docs**: Check [components/README.md](./components/README.md)
-- **API Reference**: Review [api/README.md](./api/README.md)
-- **Deployment**: See [deployment/README.md](./deployment/README.md)
+- [Conventional Commits](https://conventionalcommits.org/)
+- [Semantic Versioning](https://semver.org/)
+- [REST API Guidelines](https://restfulapi.net/)
 
 ## 📞 Support
 
-For questions or issues:
+### Getting Help
 
-- Check the [CHANGELOG.md](../CHANGELOG.md) for recent changes
-- Review component documentation in `docs/components/`
-- Check API documentation in `docs/api/`
-- Create an issue in the project repository
+1. **Search Documentation**: Use the structured navigation above
+2. **Check Templates**: Use appropriate templates for new content
+3. **Review Examples**: Look at existing documentation for patterns
+4. **Contact Team**: Reach out to the development team for clarification
+
+### Contributing to Documentation
+
+1. **Follow Templates**: Use provided templates for consistency
+2. **Update Cross-references**: Ensure links remain valid
+3. **Test Examples**: Verify code examples work correctly
+4. **Review Changes**: Have documentation changes reviewed
+
+## 🚀 Future Enhancements
+
+### Planned Improvements
+
+- Interactive API documentation
+- Video tutorials for complex features
+- Automated documentation generation
+- Documentation search functionality
+- Multi-language support
+
+### Feedback Welcome
+
+We continuously improve our documentation based on user feedback. Please share your suggestions for making our documentation more helpful and accessible.
 
 ---
 
-_Last updated: September 2025_
+**Last Updated**: Sprint 01 - MVP Completion  
+**Next Review**: Sprint 02 Planning  
+**Maintained By**: Farmroket Development Team

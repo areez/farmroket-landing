@@ -1,8 +1,13 @@
 "use client";
 
 import { useState } from 'react';
+import { useAuth } from '@/contexts/AuthContext';
+import AuthModal from '@/components/AuthModal';
 
 export default function WaitlistForm() {
+  const { user } = useAuth();
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  
   const [formData, setFormData] = useState({
     companyName: '',
     contactName: '',
@@ -17,6 +22,7 @@ export default function WaitlistForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -35,13 +41,41 @@ export default function WaitlistForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Check if user is authenticated
+    if (!user) {
+      setShowAuthModal(true);
+      return;
+    }
+    
     setIsSubmitting(true);
+    setError(null);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitted(true);
-    setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          userId: user.id,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        setError(result.error || 'An error occurred during submission');
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -263,8 +297,8 @@ export default function WaitlistForm() {
                              (formData.companySize === '1-10' ? '1-10 employees' :
                               formData.companySize === '11-50' ? '11-50 employees' :
                               formData.companySize === '51-200' ? '51-200 employees' :
-                              formData.companySize === '201-1000' ? '201-1000 employees' :
-                              formData.companySize === '1000+' ? '1000+ employees' : formData.companySize)
+                              formData.companySize === '201-500' ? '201-500 employees' :
+                              formData.companySize === '500+' ? '500+ employees' : formData.companySize)
                              : 'Select company size'}
                          </span>
                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -276,8 +310,8 @@ export default function WaitlistForm() {
                            { value: '1-10', label: '1-10 employees' },
                            { value: '11-50', label: '11-50 employees' },
                            { value: '51-200', label: '51-200 employees' },
-                           { value: '201-1000', label: '201-1000 employees' },
-                           { value: '1000+', label: '1000+ employees' }
+                           { value: '201-500', label: '201-500 employees' },
+                           { value: '500+', label: '500+ employees' }
                          ].map((size) => (
                            <button
                              key={size.value}
@@ -382,12 +416,11 @@ export default function WaitlistForm() {
                       <div tabIndex={0} role="button" className="input input-bordered input-md focus:input-primary w-full flex justify-between items-center cursor-pointer">
                         <span className="text-sm">
                           {formData.timeline ? 
-                            (formData.timeline === 'immediate' ? 'Immediate (within 1 month)' :
-                             formData.timeline === 'quarter' ? 'This quarter (1-3 months)' :
-                             formData.timeline === 'half-year' ? 'Next 6 months' :
-                             formData.timeline === 'year' ? 'Within a year' :
-                             formData.timeline === 'exploring' ? 'Just exploring options' : formData.timeline)
-                            : 'Select timeline'}
+                             (formData.timeline === 'immediate' ? 'Immediate (within 1 month)' :
+                              formData.timeline === '1-3-months' ? 'This quarter (1-3 months)' :
+                              formData.timeline === '3-6-months' ? 'This half-year (3-6 months)' :
+                              formData.timeline === '6-12-months' ? 'This year (6-12 months)' : formData.timeline)
+                             : 'Select timeline'}
                         </span>
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -395,12 +428,11 @@ export default function WaitlistForm() {
                       </div>
                       <div tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-full">
                         {[
-                          { value: 'immediate', label: 'Immediate (within 1 month)' },
-                          { value: 'quarter', label: 'This quarter (1-3 months)' },
-                          { value: 'half-year', label: 'Next 6 months' },
-                          { value: 'year', label: 'Within a year' },
-                          { value: 'exploring', label: 'Just exploring options' }
-                        ].map((option) => (
+                           { value: 'immediate', label: 'Immediate (within 1 month)' },
+                           { value: '1-3-months', label: 'This quarter (1-3 months)' },
+                           { value: '3-6-months', label: 'This half-year (3-6 months)' },
+                           { value: '6-12-months', label: 'This year (6-12 months)' }
+                         ].map((option) => (
                           <button
                             key={option.value}
                             type="button"
@@ -430,6 +462,16 @@ export default function WaitlistForm() {
                       placeholder="Tell us about your specific use case, current systems, or any questions you have..."
                     ></textarea>
                   </div>
+
+                  {/* Error Display */}
+                  {error && (
+                    <div className="alert alert-error col-span-full">
+                      <svg className="w-6 h-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      <span>{error}</span>
+                    </div>
+                  )}
 
                   {/* Submit Button */}
                   <div className="form-control mt-6 col-span-full">
@@ -466,6 +508,12 @@ export default function WaitlistForm() {
           </div>
         </div>
       </div>
+      
+      {/* Authentication Modal */}
+      <AuthModal 
+        isOpen={showAuthModal} 
+        onClose={() => setShowAuthModal(false)} 
+      />
     </section>
   );
 }

@@ -4,8 +4,13 @@
 
 This document outlines the development workflow, coding standards, and best practices for the FarmRoket landing page project.
 
+> **📋 NEW: Standard Operating Procedure (SOP)**  
+> For a complete step-by-step workflow for all development tasks, see our [**Standard Operating Procedure (SOP)**](./SOP.md). This SOP ensures consistency, quality, and completeness for every development task.
+
 ## 📋 Table of Contents
 
+- [Standard Operating Procedure (SOP)](./SOP.md) - **Complete development workflow**
+- [SOP Checklists](./sop-checklists.md) - **Task-specific quick reference checklists**
 - [Development Workflow](#development-workflow)
 - [Commit Message Standards](#commit-message-standards)
 - [Code Quality & Formatting](#code-quality--formatting)

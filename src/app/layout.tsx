@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,9 +21,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   icons: {
-    icon: '/icon-farmrocket.svg',
-    shortcut: '/icon-farmrocket.svg',
-    apple: '/icon-farmrocket.svg',
+    icon: '/icon-farmroket.svg',
+    shortcut: '/icon-farmroket.svg',
+    apple: '/icon-farmroket.svg',
   },
 
   openGraph: {
@@ -80,7 +81,7 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'FarmRoket',
     url: 'https://farmroket.com',
-    logo: 'https://farmroket.com/icon-farmrocket.svg',
+    logo: 'https://farmroket.com/icon-farmroket.svg',
     description: 'Compliance-ready supply chain SaaS platform powered by blockchain technology.',
     foundingDate: '2024',
     industry: 'Blockchain Supply Chain Technology',
@@ -106,7 +107,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased`}
       >
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
