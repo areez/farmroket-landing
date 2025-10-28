@@ -512,7 +512,11 @@ export default function WaitlistForm() {
       {/* Authentication Modal */}
       <AuthModal 
         isOpen={showAuthModal} 
-        onClose={() => setShowAuthModal(false)} 
+        onClose={() => setShowAuthModal(false)}
+        onSuccess={() => {
+          setShowAuthModal(false);
+          // Optionally refresh the form or show a success message
+        }}
       />
     </section>
   );

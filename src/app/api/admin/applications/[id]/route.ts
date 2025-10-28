@@ -10,6 +10,10 @@ async function verifyAdminAccess(request: NextRequest) {
 
   const token = authHeader.replace('Bearer ', '');
   
+  if (!supabaseAdmin) {
+    return { isAdmin: false, error: 'Admin operations not available' };
+  }
+  
   try {
     const { data: { user }, error } = await supabaseAdmin.auth.getUser(token);
     
@@ -33,10 +37,10 @@ async function verifyAdminAccess(request: NextRequest) {
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const body = await request.json();
     const { status } = body;
 
@@ -55,6 +59,13 @@ export async function PATCH(
       return NextResponse.json(
         { error: authError || 'Access denied' },
         { status: 403 }
+      );
+    }
+
+    if (!supabaseAdmin) {
+      return NextResponse.json(
+        { error: 'Admin operations not available' },
+        { status: 500 }
       );
     }
 
@@ -100,10 +111,10 @@ export async function PATCH(
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
 
     // Verify admin access
     const { isAdmin, error: authError } = await verifyAdminAccess(request);
@@ -112,6 +123,13 @@ export async function GET(
       return NextResponse.json(
         { error: authError || 'Access denied' },
         { status: 403 }
+      );
+    }
+
+    if (!supabaseAdmin) {
+      return NextResponse.json(
+        { error: 'Admin operations not available' },
+        { status: 500 }
       );
     }
 

@@ -10,6 +10,10 @@ async function verifyAdminAccess(request: NextRequest) {
 
   const token = authHeader.replace('Bearer ', '');
   
+  if (!supabaseAdmin) {
+    return { isAdmin: false, error: 'Admin operations not available' };
+  }
+  
   try {
     const { data: { user }, error } = await supabaseAdmin.auth.getUser(token);
     
@@ -40,6 +44,13 @@ export async function GET(request: NextRequest) {
       return NextResponse.json(
         { error: authError || 'Access denied' },
         { status: 403 }
+      );
+    }
+    
+    if (!supabaseAdmin) {
+      return NextResponse.json(
+        { error: 'Admin operations not available' },
+        { status: 500 }
       );
     }
     

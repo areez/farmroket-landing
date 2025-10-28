@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
-import { PilotApplicationInsert } from '@/types/database';
+import { Database, PilotApplicationInsert } from '@/types/database';
 
 function isValidEmail(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -19,6 +19,13 @@ function isValidTimeline(timeline: string): boolean {
 
 export async function POST(request: NextRequest) {
   try {
+    if (!supabaseAdmin) {
+      return NextResponse.json(
+        { error: 'Database operations not available' },
+        { status: 500 }
+      );
+    }
+
     const body = await request.json();
     const { 
       companyName, 
@@ -134,10 +141,10 @@ export async function POST(request: NextRequest) {
       contact_name: contactName.trim(),
       email: email.trim().toLowerCase(),
       phone: phone?.trim() || '',
-      company_size: companySize as Database['public']['Enums']['company_size'],
+      company_size: companySize as Database['public']['Tables']['pilot_applications']['Row']['company_size'],
       current_challenges: currentChallenges || [],
       interested_features: interestedFeatures || [],
-      timeline: timeline as Database['public']['Enums']['timeline'],
+      timeline: timeline as Database['public']['Tables']['pilot_applications']['Row']['timeline'],
       additional_info: additionalInfo?.trim() || null,
       status: 'pending'
     };
@@ -179,6 +186,13 @@ export async function POST(request: NextRequest) {
 // GET endpoint to retrieve pilot application statistics (for admin purposes)
 export async function GET() {
   try {
+    if (!supabaseAdmin) {
+      return NextResponse.json(
+        { error: 'Database operations not available' },
+        { status: 500 }
+      );
+    }
+
     // Get total count of applications
     const { count: totalApplications, error: countError } = await supabaseAdmin
       .from('pilot_applications')

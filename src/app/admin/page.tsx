@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
-import { PilotApplicationRow } from '@/types/database';
+import { PilotApplication } from '@/types/database';
 
 interface ApplicationStats {
   total: number;
@@ -16,23 +16,11 @@ interface ApplicationStats {
 export default function AdminDashboard() {
   const { user, session, loading } = useAuth();
   const router = useRouter();
-  const [applications, setApplications] = useState<PilotApplicationRow[]>([]);
+  const [applications, setApplications] = useState<PilotApplication[]>([]);
   const [stats, setStats] = useState<ApplicationStats | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
-
-  useEffect(() => {
-    if (!loading && !user) {
-      router.push('/');
-      return;
-    }
-
-    if (user) {
-      fetchApplications();
-      fetchStats();
-    }
-  }, [user, loading, router, fetchApplications]);
 
   const fetchApplications = useCallback(async () => {
     try {
@@ -56,6 +44,18 @@ export default function AdminDashboard() {
       setError('Failed to load applications');
     }
   }, [session?.access_token]);
+
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push('/');
+      return;
+    }
+
+    if (user) {
+      fetchApplications();
+      fetchStats();
+    }
+  }, [user, loading, router, fetchApplications]);
 
   const fetchStats = async () => {
     try {
